@@ -1,0 +1,10 @@
+# Output Directory
+# 输出目录
+
+This directory contains the project output files.
+本目录包含项目输出文件。
+
+## Structure / 结构
+
+- `charts/` - Generated visualization charts / 生成的可视化图表
+- `reports/` - Analysis reports and documentation / 分析报告和文档

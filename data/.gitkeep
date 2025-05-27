@@ -1,0 +1,10 @@
+# Data Directory
+# 数据目录
+
+This directory contains the project data files.
+本目录包含项目数据文件。
+
+## Structure / 结构
+
+- `raw/` - Original data files / 原始数据文件
+- `processed/` - Cleaned and processed data / 清洗和处理后的数据

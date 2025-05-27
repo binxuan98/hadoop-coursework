@@ -1,0 +1,146 @@
+2025-05-28 00:19:09,400 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-05-28 00:19:09,400 - __main__ - INFO - 开始电商订单分析项目
+2025-05-28 00:19:09,400 - __main__ - INFO - Step 1: Data Processing / 步骤1：数据处理
+2025-05-28 00:19:09,400 - __main__ - INFO - Generating sample data / 生成示例数据
+2025-05-28 00:19:09,400 - src.data_utils - INFO - Generating sample e-commerce order data
+2025-05-28 00:19:09,443 - __main__ - ERROR - Error occurred during analysis: 'numpy.datetime64' object has no attribute 'strftime'
+2025-05-28 00:19:09,443 - __main__ - ERROR - 分析过程中发生错误: 'numpy.datetime64' object has no attribute 'strftime'
+2025-05-28 00:19:37,984 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-05-28 00:19:37,985 - __main__ - INFO - 开始电商订单分析项目
+2025-05-28 00:19:37,985 - __main__ - INFO - Step 1: Data Processing / 步骤1：数据处理
+2025-05-28 00:19:37,985 - __main__ - INFO - Generating sample data / 生成示例数据
+2025-05-28 00:19:37,985 - src.data_utils - INFO - Generating sample e-commerce order data
+2025-05-28 00:19:38,329 - src.data_utils - INFO - Generated 10000 sample orders
+2025-05-28 00:19:38,330 - __main__ - INFO - Loading and cleaning data / 加载和清洗数据
+2025-05-28 00:19:38,330 - src.data_utils - ERROR - Error loading data from /Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv: [Errno 2] No such file or directory: '/Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv'
+2025-05-28 00:19:38,330 - __main__ - ERROR - Error occurred during analysis: [Errno 2] No such file or directory: '/Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv'
+2025-05-28 00:19:38,330 - __main__ - ERROR - 分析过程中发生错误: [Errno 2] No such file or directory: '/Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv'
+2025-05-28 00:20:18,316 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-05-28 00:20:18,316 - __main__ - INFO - 开始电商订单分析项目
+2025-05-28 00:20:18,317 - __main__ - INFO - Step 1: Data Processing / 步骤1：数据处理
+2025-05-28 00:20:18,317 - __main__ - INFO - Generating sample data / 生成示例数据
+2025-05-28 00:20:18,317 - src.data_utils - INFO - Generating sample e-commerce order data
+2025-05-28 00:20:18,553 - src.data_utils - INFO - Sample data saved to /Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv
+2025-05-28 00:20:18,554 - src.data_utils - INFO - Generated 10000 sample orders
+2025-05-28 00:20:18,555 - __main__ - INFO - Loading and cleaning data / 加载和清洗数据
+2025-05-28 00:20:18,567 - src.data_utils - INFO - Loaded 10000 records from /Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv
+2025-05-28 00:20:18,567 - src.data_utils - INFO - Starting data cleaning process
+2025-05-28 00:20:18,586 - src.data_utils - INFO - Data cleaning completed. Rows: 10000 -> 10000
+2025-05-28 00:20:18,617 - src.data_utils - INFO - Data saved to /Users/zhangbinxuan/hadoop_coursework/data/processed/cleaned_orders.csv
+2025-05-28 00:20:18,617 - __main__ - INFO - Step 2: Data Analysis / 步骤2：数据分析
+2025-05-28 00:20:18,618 - src.analysis - INFO - OrderAnalyzer initialized with 10000 orders
+2025-05-28 00:20:18,618 - __main__ - ERROR - Error occurred during analysis: 'OrderAnalyzer' object has no attribute 'get_basic_statistics'
+2025-05-28 00:20:18,618 - __main__ - ERROR - 分析过程中发生错误: 'OrderAnalyzer' object has no attribute 'get_basic_statistics'
+2025-05-28 00:20:35,463 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-05-28 00:20:35,464 - __main__ - INFO - 开始电商订单分析项目
+2025-05-28 00:20:35,464 - __main__ - INFO - Step 1: Data Processing / 步骤1：数据处理
+2025-05-28 00:20:35,464 - __main__ - INFO - Loading and cleaning data / 加载和清洗数据
+2025-05-28 00:20:35,478 - src.data_utils - INFO - Loaded 10000 records from /Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv
+2025-05-28 00:20:35,478 - src.data_utils - INFO - Starting data cleaning process
+2025-05-28 00:20:35,489 - src.data_utils - INFO - Data cleaning completed. Rows: 10000 -> 10000
+2025-05-28 00:20:35,529 - src.data_utils - INFO - Data saved to /Users/zhangbinxuan/hadoop_coursework/data/processed/cleaned_orders.csv
+2025-05-28 00:20:35,529 - __main__ - INFO - Step 2: Data Analysis / 步骤2：数据分析
+2025-05-28 00:20:35,530 - src.analysis - INFO - OrderAnalyzer initialized with 10000 orders
+2025-05-28 00:20:35,530 - src.analysis - INFO - Calculating basic statistics
+2025-05-28 00:20:35,534 - src.analysis - INFO - Basic statistics calculated: 10000 orders, 11938437.42 total revenue
+2025-05-28 00:20:35,534 - src.analysis - INFO - Performing time series analysis
+2025-05-28 00:20:35,551 - src.analysis - INFO - Performing customer analysis
+2025-05-28 00:20:35,581 - src.analysis - INFO - Performing product analysis
+2025-05-28 00:20:35,592 - __main__ - INFO - Step 3: Data Visualization / 步骤3：数据可视化
+2025-05-28 00:20:35,593 - src.visualization - INFO - DataVisualizer initialized with 10000 records
+2025-05-28 00:20:35,593 - src.visualization - INFO - Creating sales trend visualization
+2025-05-28 00:20:36,342 - __main__ - ERROR - Error occurred during analysis: Multi-dimensional indexing (e.g. `obj[:, None]`) is no longer supported. Convert to a numpy array before indexing instead.
+2025-05-28 00:20:36,342 - __main__ - ERROR - 分析过程中发生错误: Multi-dimensional indexing (e.g. `obj[:, None]`) is no longer supported. Convert to a numpy array before indexing instead.
+2025-05-28 00:21:29,189 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-05-28 00:21:29,189 - __main__ - INFO - 开始电商订单分析项目
+2025-05-28 00:21:29,189 - __main__ - INFO - Step 1: Data Processing / 步骤1：数据处理
+2025-05-28 00:21:29,189 - __main__ - INFO - Loading and cleaning data / 加载和清洗数据
+2025-05-28 00:21:29,204 - src.data_utils - INFO - Loaded 10000 records from /Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv
+2025-05-28 00:21:29,204 - src.data_utils - INFO - Starting data cleaning process
+2025-05-28 00:21:29,223 - src.data_utils - INFO - Data cleaning completed. Rows: 10000 -> 10000
+2025-05-28 00:21:29,262 - src.data_utils - INFO - Data saved to /Users/zhangbinxuan/hadoop_coursework/data/processed/cleaned_orders.csv
+2025-05-28 00:21:29,262 - __main__ - INFO - Step 2: Data Analysis / 步骤2：数据分析
+2025-05-28 00:21:29,263 - src.analysis - INFO - OrderAnalyzer initialized with 10000 orders
+2025-05-28 00:21:29,263 - src.analysis - INFO - Calculating basic statistics
+2025-05-28 00:21:29,268 - src.analysis - INFO - Basic statistics calculated: 10000 orders, 11938437.42 total revenue
+2025-05-28 00:21:29,268 - src.analysis - INFO - Performing time series analysis
+2025-05-28 00:21:29,279 - src.analysis - INFO - Performing customer analysis
+2025-05-28 00:21:29,302 - src.analysis - INFO - Performing product analysis
+2025-05-28 00:21:29,313 - __main__ - INFO - Step 3: Data Visualization / 步骤3：数据可视化
+2025-05-28 00:21:29,313 - src.visualization - INFO - DataVisualizer initialized with 10000 records
+2025-05-28 00:21:29,314 - src.visualization - INFO - Creating sales trend visualization
+2025-05-28 00:21:29,422 - __main__ - ERROR - Error occurred during analysis: Multi-dimensional indexing (e.g. `obj[:, None]`) is no longer supported. Convert to a numpy array before indexing instead.
+2025-05-28 00:21:29,422 - __main__ - ERROR - 分析过程中发生错误: Multi-dimensional indexing (e.g. `obj[:, None]`) is no longer supported. Convert to a numpy array before indexing instead.
+2025-05-28 00:22:08,837 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-05-28 00:22:08,837 - __main__ - INFO - 开始电商订单分析项目
+2025-05-28 00:22:08,837 - __main__ - INFO - Step 1: Data Processing / 步骤1：数据处理
+2025-05-28 00:22:08,837 - __main__ - INFO - Loading and cleaning data / 加载和清洗数据
+2025-05-28 00:22:08,851 - src.data_utils - INFO - Loaded 10000 records from /Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv
+2025-05-28 00:22:08,851 - src.data_utils - INFO - Starting data cleaning process
+2025-05-28 00:22:08,872 - src.data_utils - INFO - Data cleaning completed. Rows: 10000 -> 10000
+2025-05-28 00:22:08,916 - src.data_utils - INFO - Data saved to /Users/zhangbinxuan/hadoop_coursework/data/processed/cleaned_orders.csv
+2025-05-28 00:22:08,916 - __main__ - INFO - Step 2: Data Analysis / 步骤2：数据分析
+2025-05-28 00:22:08,917 - src.analysis - INFO - OrderAnalyzer initialized with 10000 orders
+2025-05-28 00:22:08,917 - src.analysis - INFO - Calculating basic statistics
+2025-05-28 00:22:08,922 - src.analysis - INFO - Basic statistics calculated: 10000 orders, 11938437.42 total revenue
+2025-05-28 00:22:08,922 - src.analysis - INFO - Performing time series analysis
+2025-05-28 00:22:08,940 - src.analysis - INFO - Performing customer analysis
+2025-05-28 00:22:08,972 - src.analysis - INFO - Performing product analysis
+2025-05-28 00:22:08,985 - __main__ - INFO - Step 3: Data Visualization / 步骤3：数据可视化
+2025-05-28 00:22:08,986 - src.visualization - INFO - DataVisualizer initialized with 10000 records
+2025-05-28 00:22:08,986 - src.visualization - INFO - Creating sales trend visualization
+2025-05-28 00:22:22,032 - src.visualization - INFO - Sales trend chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/sales_trend.png
+2025-05-28 00:22:22,033 - src.visualization - INFO - Creating category distribution visualization
+2025-05-28 00:22:37,520 - src.visualization - INFO - Category distribution chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/category_distribution.png
+2025-05-28 00:22:37,520 - src.visualization - INFO - Creating customer demographics visualization
+2025-05-28 00:22:58,319 - src.visualization - INFO - Customer demographics chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/customer_demographics.png
+2025-05-28 00:22:58,320 - src.visualization - INFO - Creating top 15 products visualization
+2025-05-28 00:23:07,571 - src.visualization - INFO - Top products chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/top_products.png
+2025-05-28 00:23:07,571 - src.visualization - INFO - Creating correlation matrix visualization
+2025-05-28 00:23:13,482 - src.visualization - INFO - Correlation matrix chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/correlation_matrix.png
+2025-05-28 00:23:13,482 - __main__ - INFO - Step 4: Generate Report / 步骤4：生成报告
+2025-05-28 00:23:13,482 - src.analysis - INFO - Generating comprehensive analysis report
+2025-05-28 00:23:13,484 - __main__ - ERROR - Error occurred during analysis: keys must be str, int, float, bool or None, not tuple
+2025-05-28 00:23:13,484 - __main__ - ERROR - 分析过程中发生错误: keys must be str, int, float, bool or None, not tuple
+2025-05-28 00:24:02,045 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-05-28 00:24:02,045 - __main__ - INFO - 开始电商订单分析项目
+2025-05-28 00:24:02,046 - __main__ - INFO - Step 1: Data Processing / 步骤1：数据处理
+2025-05-28 00:24:02,046 - __main__ - INFO - Loading and cleaning data / 加载和清洗数据
+2025-05-28 00:24:02,060 - src.data_utils - INFO - Loaded 10000 records from /Users/zhangbinxuan/hadoop_coursework/data/raw/sample_orders.csv
+2025-05-28 00:24:02,060 - src.data_utils - INFO - Starting data cleaning process
+2025-05-28 00:24:02,078 - src.data_utils - INFO - Data cleaning completed. Rows: 10000 -> 10000
+2025-05-28 00:24:02,119 - src.data_utils - INFO - Data saved to /Users/zhangbinxuan/hadoop_coursework/data/processed/cleaned_orders.csv
+2025-05-28 00:24:02,119 - __main__ - INFO - Step 2: Data Analysis / 步骤2：数据分析
+2025-05-28 00:24:02,121 - src.analysis - INFO - OrderAnalyzer initialized with 10000 orders
+2025-05-28 00:24:02,121 - src.analysis - INFO - Calculating basic statistics
+2025-05-28 00:24:02,125 - src.analysis - INFO - Basic statistics calculated: 10000 orders, 11938437.42 total revenue
+2025-05-28 00:24:02,125 - src.analysis - INFO - Performing time series analysis
+2025-05-28 00:24:02,135 - src.analysis - INFO - Performing customer analysis
+2025-05-28 00:24:02,161 - src.analysis - INFO - Performing product analysis
+2025-05-28 00:24:02,172 - __main__ - INFO - Step 3: Data Visualization / 步骤3：数据可视化
+2025-05-28 00:24:02,173 - src.visualization - INFO - DataVisualizer initialized with 10000 records
+2025-05-28 00:24:02,173 - src.visualization - INFO - Creating sales trend visualization
+2025-05-28 00:24:34,803 - src.visualization - INFO - Sales trend chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/sales_trend.png
+2025-05-28 00:24:34,804 - src.visualization - INFO - Creating category distribution visualization
+2025-05-28 00:24:41,600 - src.visualization - INFO - Category distribution chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/category_distribution.png
+2025-05-28 00:24:41,601 - src.visualization - INFO - Creating customer demographics visualization
+2025-05-28 00:24:44,122 - src.visualization - INFO - Customer demographics chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/customer_demographics.png
+2025-05-28 00:24:44,123 - src.visualization - INFO - Creating top 15 products visualization
+2025-05-28 00:24:46,736 - src.visualization - INFO - Top products chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/top_products.png
+2025-05-28 00:24:46,736 - src.visualization - INFO - Creating correlation matrix visualization
+2025-05-28 00:24:49,058 - src.visualization - INFO - Correlation matrix chart saved to /Users/zhangbinxuan/hadoop_coursework/output/charts/correlation_matrix.png
+2025-05-28 00:24:49,059 - __main__ - INFO - Step 4: Generate Report / 步骤4：生成报告
+2025-05-28 00:24:49,059 - src.analysis - INFO - Generating comprehensive analysis report
+2025-05-28 00:24:49,063 - src.analysis - INFO - Reports generated: /Users/zhangbinxuan/hadoop_coursework/output/reports/analysis_report.json, /Users/zhangbinxuan/hadoop_coursework/output/reports/analysis_report.md
+2025-05-28 00:24:49,063 - __main__ - INFO - Step 5: Project Evaluation / 步骤5：项目评估
+2025-05-28 00:24:49,063 - src.evaluation - INFO - Starting project evaluation
+2025-05-28 00:24:49,063 - src.evaluation - INFO - Evaluating data cleaning quality
+2025-05-28 00:24:49,077 - src.evaluation - INFO - Evaluating data analysis quality
+2025-05-28 00:24:49,078 - src.evaluation - INFO - Evaluating visualization quality
+2025-05-28 00:24:49,078 - src.evaluation - INFO - Evaluating code quality
+2025-05-28 00:24:49,080 - src.evaluation - INFO - Evaluating report writing quality
+2025-05-28 00:24:49,080 - src.evaluation - INFO - Evaluation reports saved: /Users/zhangbinxuan/hadoop_coursework/output/reports/evaluation_report.json, /Users/zhangbinxuan/hadoop_coursework/output/reports/evaluation_report.md
+2025-05-28 00:24:49,081 - src.evaluation - INFO - Project evaluation completed. Overall score: 86.12/100
+2025-05-28 00:24:49,081 - __main__ - INFO - Analysis completed successfully! / 分析成功完成！
+2025-05-28 00:24:49,081 - __main__ - INFO - Project evaluation score: 86.12/100
+2025-05-28 00:24:49,081 - __main__ - INFO - 项目评估得分: 86.12/100
