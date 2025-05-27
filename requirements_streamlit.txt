@@ -1,0 +1,37 @@
+# Streamlit Web Application Dependencies
+# Streamlit网页应用依赖包
+
+# Core web framework
+streamlit>=1.28.0
+
+# Data processing and analysis
+pandas>=1.5.0
+numpy>=1.21.0
+scipy>=1.9.0
+scikit-learn>=1.1.0
+
+# Interactive visualization
+plotly>=5.15.0
+streamlit-plotly-events>=0.0.6
+
+# Static visualization (existing)
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# File handling and utilities
+openpyxl>=3.0.0
+xlrd>=2.0.0
+
+# Date and time handling
+python-dateutil>=2.8.0
+
+# JSON and data serialization
+orjson>=3.8.0
+
+# Performance optimization
+numba>=0.56.0
+
+# Additional Streamlit components (optional)
+streamlit-aggrid>=0.3.0
+streamlit-option-menu>=0.3.0
+streamlit-elements>=0.1.0

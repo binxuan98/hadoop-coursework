@@ -1,0 +1,16 @@
+[global]
+
+# Disable email collection
+email = ""
+
+[server]
+
+# Server configuration
+port = 8501
+address = "localhost"
+headless = true
+
+[browser]
+
+# Browser configuration
+gatherUsageStats = false
