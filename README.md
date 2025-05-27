@@ -15,15 +15,24 @@ This is a data analysis project suitable for college students to learn data proc
 - 📈 **可视化丰富**: 使用多种图表展示分析结果
 - 🎯 **评分标准**: 包含完整的项目评分体系
 - 👥 **团队协作**: 支持多人协作开发
+- 🌐 **Web界面**: 基于Streamlit的交互式网页应用
+- 📱 **响应式设计**: 适配不同屏幕尺寸的现代化界面
+- 🔄 **实时分析**: 支持文件上传和即时数据分析
+- 🎨 **交互式图表**: 基于Plotly的动态可视化图表
 
 ## 项目结构 (Project Structure)
 
 ```
 ecommerce-order-analysis/
 ├── README.md                 # 项目说明文档
+├── README_Streamlit.md       # Streamlit应用说明
 ├── requirements.txt          # 依赖包列表
+├── requirements_streamlit.txt # Streamlit依赖包
 ├── main.py                  # 主程序入口
+├── app.py                   # Streamlit网页应用
 ├── config.py                # 配置文件
+├── .streamlit/              # Streamlit配置
+│   └── config.toml
 ├── data/                    # 数据目录
 │   ├── raw/                 # 原始数据
 │   │   └── sample_orders.csv
@@ -35,12 +44,13 @@ ecommerce-order-analysis/
 │   ├── analysis.py          # 分析模块
 │   └── evaluation.py        # 评分模块
 ├── notebooks/               # Jupyter笔记本
-│   └── analysis.ipynb       # 分析笔记本
+│   └── exploratory_analysis.ipynb
 ├── output/                  # 输出目录
 │   ├── charts/              # 图表输出
 │   └── reports/             # 报告输出
 └── tests/                   # 测试文件
-    └── test_data_utils.py
+    ├── test_data_utils.py
+    └── test_analysis.py
 ```
 
 ## 安装和运行 (Installation and Usage)
@@ -63,13 +73,32 @@ pip install -r requirements.txt
 
 ### 3. 运行项目 (Run Project)
 
+#### 方式一：命令行版本
 ```bash
 # 运行主程序
 python main.py
-
-# 或者使用Jupyter笔记本
-jupyter notebook notebooks/analysis.ipynb
 ```
+
+#### 方式二：Web应用版本 (推荐)
+```bash
+# 安装Streamlit依赖
+pip install -r requirements_streamlit.txt
+
+# 启动Web应用
+streamlit run app.py
+```
+
+#### 方式三：Jupyter笔记本
+```bash
+# 启动Jupyter笔记本
+jupyter notebook notebooks/exploratory_analysis.ipynb
+```
+
+### 4. 访问Web应用
+
+启动Streamlit应用后，在浏览器中访问：
+- 本地地址：http://localhost:8501
+- 网络地址：http://your-ip:8501
 
 ## 数据说明 (Data Description)
 
@@ -86,6 +115,33 @@ jupyter notebook notebooks/analysis.ipynb
 - `customer_age`: 客户年龄
 - `customer_gender`: 客户性别
 - `customer_city`: 客户城市
+
+## Web应用功能 (Web Application Features)
+
+### 🎛️ 交互式数据分析平台
+
+- **📊 数据源选择**
+  - 内置示例数据（10,000条订单记录）
+  - 支持CSV文件上传分析
+  - 实时数据处理和清洗
+
+- **📈 多维度分析模块**
+  - 基本统计分析：订单总数、销售额、平均订单价值
+  - 时间序列分析：日销售趋势、月度分析
+  - 客户分析：年龄组分布、客户价值分析
+  - 产品分析：类别分布、热销产品排行
+
+- **🎨 交互式可视化**
+  - 基于Plotly的动态图表
+  - 支持缩放、悬停、筛选操作
+  - 多种图表类型：折线图、柱状图、饼图、热力图
+  - 响应式设计，适配移动端
+
+- **🔧 高级功能**
+  - 日期范围筛选
+  - 图表主题切换
+  - 数据导出功能
+  - 分析报告生成
 
 ## 分析内容 (Analysis Content)
 
