@@ -2,11 +2,11 @@
 # Project Evaluation Report
 # 项目评估报告
 
-**Evaluation Date / 评估日期:** 2025-05-28T00:24:49.080699
+**Evaluation Date / 评估日期:** 2025-06-26T11:16:34.753337
 
 ## Overall Score / 总体得分
 
-**Score / 得分:** 86.12/100
+**Score / 得分:** 85.72/100
 
 **Grade / 等级:** B (良好)
 
@@ -14,7 +14,7 @@
 
 | Component / 组件 | Score / 得分 | Weight / 权重 | Weighted Score / 加权得分 |
 |------------------|--------------|---------------|---------------------------|
-| Data Cleaning / 数据清洗 | 85.0 | 20% | 17.0 |
+| Data Cleaning / 数据清洗 | 83.0 | 20% | 16.6 |
 | Data Analysis / 数据分析 | 100.0 | 30% | 30.0 |
 | Visualization / 可视化 | 62.5 | 25% | 15.6 |
 | Code Quality / 代码质量 | 90.0 | 15% | 13.5 |
@@ -23,7 +23,7 @@
 ## Performance Analysis / 表现分析
 
 ### Strengths / 优势
-- **Data Cleaning / 数据清洗**: Excellent performance (85.0/100)
+- **Data Cleaning / 数据清洗**: Excellent performance (83.0/100)
 - **Data Analysis / 数据分析**: Excellent performance (100.0/100)
 - **Code Quality / 代码质量**: Excellent performance (90.0/100)
 - **Report Writing / 报告撰写**: Excellent performance (100.0/100)

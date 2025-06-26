@@ -184,7 +184,28 @@ class DataProcessor:
             DataFrame containing the loaded data
         """
         try:
-            df = pd.read_csv(file_path, encoding='utf-8')
+            # 定义数据类型以减少内存使用和加快加载速度
+            dtype = {
+                'order_id': 'object',
+                'customer_id': 'object',
+                'product_category': 'category',
+                'product_name': 'category',
+                'quantity': 'int32',
+                'unit_price': 'float32',
+                'total_amount': 'float32',
+                'customer_age': 'int32',
+                'customer_gender': 'category',
+                'customer_city': 'category'
+            }
+            parse_dates = ['order_date']
+            # 使用分块读取和并行处理优化大数据加载
+            if file_path.stat().st_size > 1024 * 1024:  # 文件大于1MB时使用分块读取
+                chunks = []
+                for chunk in pd.read_csv(file_path, encoding='utf-8', chunksize=10000, dtype=dtype, parse_dates=parse_dates):
+                    chunks.append(chunk)
+                df = pd.concat(chunks, ignore_index=True)
+            else:
+                df = pd.read_csv(file_path, encoding='utf-8', dtype=dtype, parse_dates=parse_dates)
             self.logger.info(f"Loaded {len(df)} records from {file_path}")
             return df
         except Exception as e:
@@ -209,49 +230,77 @@ class DataProcessor:
         
         # Convert data types
         cleaned_df['order_date'] = pd.to_datetime(cleaned_df['order_date'])
-        cleaned_df['quantity'] = pd.to_numeric(cleaned_df['quantity'], errors='coerce')
-        cleaned_df['unit_price'] = pd.to_numeric(cleaned_df['unit_price'], errors='coerce')
-        cleaned_df['total_amount'] = pd.to_numeric(cleaned_df['total_amount'], errors='coerce')
-        cleaned_df['customer_age'] = pd.to_numeric(cleaned_df['customer_age'], errors='coerce')
+        numerical_cols = ['quantity', 'unit_price', 'total_amount', 'customer_age']
+        cleaned_df[numerical_cols] = cleaned_df[numerical_cols].apply(pd.to_numeric, errors='coerce')
         
         # Handle missing values
         initial_rows = len(cleaned_df)
+        
+        # 记录各列缺失值数量
+        missing_values = cleaned_df.isnull().sum()
+        for col in missing_values.index:
+            if missing_values[col] > 0:
+                self.logger.info(f"Column {col} has {missing_values[col]} missing values")
+        
+        # 删除关键列缺失值
         cleaned_df = cleaned_df.dropna(subset=['order_id', 'customer_id', 'product_name'])
         
-        # Fill missing numerical values with median
+        # 定义不同类型列
         numerical_columns = ['quantity', 'unit_price', 'total_amount', 'customer_age']
-        for col in numerical_columns:
-            if cleaned_df[col].isnull().any():
-                median_value = cleaned_df[col].median()
-                cleaned_df[col].fillna(median_value, inplace=True)
+        categorical_columns = ['product_category', 'customer_gender', 'customer_city']
+        
+        # 数值列用中位数填充
+        median_values = cleaned_df[numerical_columns].median()
+        cleaned_df[numerical_columns] = cleaned_df[numerical_columns].fillna(median_values)
+        self.logger.info(f"Filled missing numerical values with medians: {median_values}")
+        
+        # 分类列用众数填充
+        for col in categorical_columns:
+            if col in cleaned_df.columns and cleaned_df[col].isnull().any():
+                mode_value = cleaned_df[col].mode()[0]
+                cleaned_df[col].fillna(mode_value, inplace=True)
+                self.logger.info(f"Filled missing values in {col} with mode: {mode_value}")
         
         # Remove duplicates
         cleaned_df = cleaned_df.drop_duplicates(subset=['order_id'])
         
-        # Remove outliers (orders with unrealistic values)
-        cleaned_df = cleaned_df[
+        # 合并异常值处理逻辑
+        # 原有 IQR 异常值处理
+        mask = pd.Series(True, index=cleaned_df.index)
+        for col in numerical_columns:
+            Q1 = cleaned_df[col].quantile(0.25)
+            Q3 = cleaned_df[col].quantile(0.75)
+            IQR = Q3 - Q1
+            lower_bound = Q1 - 1.5 * IQR
+            upper_bound = Q3 + 1.5 * IQR
+            mask &= (cleaned_df[col] >= lower_bound) & (cleaned_df[col] <= upper_bound)
+            self.logger.info(f"Handled outliers in {col} using IQR method: removed values outside [{lower_bound}, {upper_bound}]" )
+        
+        # 原有硬编码异常值处理
+        mask &= (
             (cleaned_df['quantity'] > 0) & (cleaned_df['quantity'] <= 100) &
             (cleaned_df['unit_price'] > 0) & (cleaned_df['unit_price'] <= 50000) &
             (cleaned_df['total_amount'] > 0) & (cleaned_df['total_amount'] <= 500000) &
             (cleaned_df['customer_age'] >= 18) & (cleaned_df['customer_age'] <= 100)
-        ]
-        
+        )
+        cleaned_df = cleaned_df[mask]
+
         # Add derived columns
         cleaned_df['order_year'] = cleaned_df['order_date'].dt.year
         cleaned_df['order_month'] = cleaned_df['order_date'].dt.month
         cleaned_df['order_quarter'] = cleaned_df['order_date'].dt.quarter
         cleaned_df['order_weekday'] = cleaned_df['order_date'].dt.day_name()
-        
+
         # Add customer age groups
         cleaned_df['age_group'] = pd.cut(
             cleaned_df['customer_age'], 
             bins=[0, 25, 35, 45, 55, 100], 
             labels=['18-25', '26-35', '36-45', '46-55', '55+']
         )
-        
+
         final_rows = len(cleaned_df)
         self.logger.info(f"Data cleaning completed. Rows: {initial_rows} -> {final_rows}")
-        
+
         return cleaned_df
     
     def save_data(self, df: pd.DataFrame, file_path: Path) -> None:

@@ -1,683 +1,683 @@
 {
   "report_metadata": {
-    "generated_at": "2025-05-28T00:24:49.059231",
+    "generated_at": "2025-06-26T11:16:34.713167",
     "data_period": {
       "start": "2023-01-01T00:00:00",
       "end": "2023-12-31T00:00:00"
     },
-    "total_records_analyzed": 10000
+    "total_records_analyzed": 8514
   },
   "executive_summary": {
     "key_metrics": {
-      "total_revenue": "11,938,437.42",
-      "total_orders": "10,000",
-      "average_order_value": "1193.84",
-      "total_customers": "1,985",
-      "customer_retention_rate": "96.78%"
+      "total_revenue": "3,337,246.00",
+      "total_orders": "8,514",
+      "average_order_value": "391.97",
+      "total_customers": "1,974",
+      "customer_retention_rate": "94.28%"
     },
     "top_insights": [
-      "Most profitable category: Electronics",
+      "Most profitable category: Clothing",
       "Most valuable customer segment: 55+",
-      "Peak sales month: (2023, 12)",
-      "Repeat customer rate: 96.8%"
+      "Peak sales month: (np.int32(2023), np.int32(10))",
+      "Repeat customer rate: 94.3%"
     ]
   },
   "detailed_analysis": {
     "basic_stats": {
-      "total_orders": 10000,
-      "total_revenue": 11938437.420000002,
-      "average_order_value": 1193.8437420000002,
-      "median_order_value": 362.755,
-      "total_customers": 1985,
-      "total_products": 52,
-      "total_categories": 10,
+      "total_orders": 8514,
+      "total_revenue": "3.337246e+06",
+      "average_order_value": "391.9716",
+      "median_order_value": "269.135",
+      "total_customers": 1974,
+      "total_products": 46,
+      "total_categories": 9,
       "date_range": {
         "start": "2023-01-01",
         "end": "2023-12-31"
       },
       "revenue_statistics": {
-        "min": 11.56,
-        "max": 28521.26,
-        "std": 2876.052276996319,
-        "q25": 126.5975,
-        "q75": 878.6475
+        "min": "11.56",
+        "max": "1482.91",
+        "std": "351.5042",
+        "q25": 110.34749794006348,
+        "q75": 586.3750152587891
       },
       "quantity_statistics": {
-        "total_items_sold": "30063",
-        "average_quantity_per_order": 3.0063,
-        "max_quantity_in_order": 5
+        "total_items_sold": "24905",
+        "average_quantity_per_order": 2.92518205308903,
+        "max_quantity_in_order": "5"
       }
     },
     "time_analysis": {
       "daily_sales_summary": {
-        "avg_daily_revenue": 32708.0477260274,
-        "max_daily_revenue": 92388.26000000001,
-        "min_daily_revenue": 6465.23,
-        "avg_daily_orders": 27.397260273972602
+        "avg_daily_revenue": "9143.139",
+        "max_daily_revenue": "19534.34",
+        "min_daily_revenue": "3545.52",
+        "avg_daily_orders": 23.326027397260273
       },
       "monthly_sales_summary": {
         "best_month": [
           "2023",
-          "12"
+          "10"
         ],
         "worst_month": [
           "2023",
           "8"
         ],
-        "avg_monthly_revenue": 994869.785,
-        "monthly_growth_rate": 0.019501602460379946
+        "avg_monthly_revenue": "278103.78",
+        "monthly_growth_rate": "0.0032850157"
       },
       "weekday_patterns": {
-        "best_weekday": "Saturday",
+        "best_weekday": "Tuesday",
         "worst_weekday": "Wednesday",
-        "weekday_revenue_ratio": 1.306512599644134
+        "weekday_revenue_ratio": "1.1155767"
       },
       "seasonal_trends": {
-        "peak_season_month": "12",
+        "peak_season_month": "10",
         "low_season_month": "8",
-        "seasonal_variation": 88219.41345843454
+        "seasonal_variation": "11713.168"
       }
     },
     "customer_analysis": {
       "customer_value_metrics": {
-        "total_customers": 1985,
-        "avg_customer_value": 6014.326156171284,
-        "top_10_percent_value": 16334.918000000005,
-        "customer_retention_rate": 0.9677581863979848,
-        "avg_orders_per_customer": 5.037783375314861,
-        "repeat_customer_percentage": 96.77581863979849
+        "total_customers": 1974,
+        "avg_customer_value": "1690.6008",
+        "top_10_percent_value": 3181.0109619140626,
+        "customer_retention_rate": 0.9427558257345492,
+        "avg_orders_per_customer": 4.313069908814589,
+        "repeat_customer_percentage": 94.27558257345493
       },
       "top_customers": {
         "by_revenue": {
-          "CUST_000738": {
-            "total_spent": 49847.02,
-            "order_count": 8
-          },
-          "CUST_001824": {
-            "total_spent": 45761.91,
-            "order_count": 4
-          },
-          "CUST_001609": {
-            "total_spent": 42264.42,
+          "CUST_000740": {
+            "total_spent": 6662.47998046875,
             "order_count": 9
           },
-          "CUST_001835": {
-            "total_spent": 42195.45,
-            "order_count": 8
-          },
-          "CUST_000074": {
-            "total_spent": 41440.22,
-            "order_count": 5
-          },
-          "CUST_001001": {
-            "total_spent": 41405.03,
+          "CUST_000316": {
+            "total_spent": 6338.97998046875,
             "order_count": 11
           },
-          "CUST_000315": {
-            "total_spent": 40671.170000000006,
-            "order_count": 5
+          "CUST_001072": {
+            "total_spent": 6285.419921875,
+            "order_count": 10
           },
-          "CUST_001074": {
-            "total_spent": 36761.47,
-            "order_count": 8
+          "CUST_000191": {
+            "total_spent": 5697.259765625,
+            "order_count": 12
           },
-          "CUST_001713": {
-            "total_spent": 35410.04,
+          "CUST_000287": {
+            "total_spent": 5658.22998046875,
             "order_count": 9
           },
-          "CUST_001303": {
-            "total_spent": 35291.4,
+          "CUST_000650": {
+            "total_spent": 5625.91015625,
+            "order_count": 8
+          },
+          "CUST_001429": {
+            "total_spent": 5436.56005859375,
+            "order_count": 9
+          },
+          "CUST_000932": {
+            "total_spent": 5189.64013671875,
+            "order_count": 7
+          },
+          "CUST_001849": {
+            "total_spent": 5134.75,
             "order_count": 6
+          },
+          "CUST_001353": {
+            "total_spent": 5115.240234375,
+            "order_count": 8
           }
         },
         "by_frequency": {
-          "CUST_000191": {
-            "total_spent": 18281.239999999998,
-            "order_count": 15
-          },
           "CUST_000612": {
-            "total_spent": 4118.77,
-            "order_count": 13
-          },
-          "CUST_001309": {
-            "total_spent": 8858.99,
-            "order_count": 13
-          },
-          "CUST_001563": {
-            "total_spent": 8830.1,
+            "total_spent": 4118.77001953125,
             "order_count": 13
           },
           "CUST_000154": {
-            "total_spent": 2716.35,
+            "total_spent": 2716.35009765625,
             "order_count": 12
           },
-          "CUST_000407": {
-            "total_spent": 10929.02,
+          "CUST_000191": {
+            "total_spent": 5697.259765625,
             "order_count": 12
           },
           "CUST_000432": {
-            "total_spent": 4605.8,
-            "order_count": 12
-          },
-          "CUST_000821": {
-            "total_spent": 13230.69,
+            "total_spent": 4605.7998046875,
             "order_count": 12
           },
           "CUST_001351": {
-            "total_spent": 4422.54,
+            "total_spent": 4422.5400390625,
             "order_count": 12
           },
-          "CUST_000076": {
-            "total_spent": 6157.42,
+          "CUST_000316": {
+            "total_spent": 6338.97998046875,
             "order_count": 11
+          },
+          "CUST_001408": {
+            "total_spent": 2813.590087890625,
+            "order_count": 11
+          },
+          "CUST_001563": {
+            "total_spent": 3582.929931640625,
+            "order_count": 11
+          },
+          "CUST_000076": {
+            "total_spent": 4495.3701171875,
+            "order_count": 10
+          },
+          "CUST_000303": {
+            "total_spent": 3911.989990234375,
+            "order_count": 10
           }
         }
       },
       "demographic_insights": {
         "gender_distribution": {
           "total_amount_sum": {
-            "Female": 6164178.34,
-            "Male": 5774259.08
+            "Female": 1716429.25,
+            "Male": 1620816.625
           },
           "total_amount_mean": {
-            "Female": 1204.1762727095136,
-            "Male": 1183.0073919278836
+            "Female": 393.947509765625,
+            "Male": 389.90057373046875
           },
           "total_amount_count": {
-            "Female": 5119,
-            "Male": 4881
+            "Female": 4357,
+            "Male": 4157
           },
           "customer_id_nunique": {
-            "Female": 1016,
-            "Male": 969
+            "Female": 1011,
+            "Male": 963
           }
         },
         "age_group_distribution": {
           "total_amount_sum": {
-            "18-25": 1687172.59,
-            "26-35": 2322283.57,
-            "36-45": 2288267.55,
-            "46-55": 2607315.83,
-            "55+": 3033397.88
+            "18-25": 479174.96875,
+            "26-35": 591530.75,
+            "36-45": 686369.75,
+            "46-55": 673833.1875,
+            "55+": 906337.1875
           },
           "total_amount_mean": {
-            "18-25": 1168.402070637119,
-            "26-35": 1309.066273957159,
-            "36-45": 1130.0086666666666,
-            "46-55": 1273.1034326171875,
-            "55+": 1119.7482022886675
+            "18-25": 393.73455810546875,
+            "26-35": 395.9375915527344,
+            "36-45": 396.5163269042969,
+            "46-55": 389.7242126464844,
+            "55+": 386.82763671875
           },
           "total_amount_count": {
-            "18-25": 1444,
-            "26-35": 1774,
-            "36-45": 2025,
-            "46-55": 2048,
-            "55+": 2709
+            "18-25": 1217,
+            "26-35": 1494,
+            "36-45": 1731,
+            "46-55": 1729,
+            "55+": 2343
           },
           "customer_id_nunique": {
-            "18-25": 290,
-            "26-35": 357,
-            "36-45": 397,
-            "46-55": 393,
-            "55+": 548
+            "18-25": 289,
+            "26-35": 354,
+            "36-45": 395,
+            "46-55": 391,
+            "55+": 545
           }
         },
         "top_cities": {
           "total_amount_sum": {
-            "武汉": 937776.67,
-            "重庆": 936216.29,
-            "西安": 931617.93,
-            "深圳": 882333.99,
-            "成都": 849541.28,
-            "长沙": 819718.78,
-            "北京": 813832.89,
-            "南京": 801999.76,
-            "苏州": 800044.73,
-            "郑州": 770601.93
+            "重庆": 255028.8125,
+            "西安": 246553.78125,
+            "深圳": 241075.78125,
+            "苏州": 239495.671875,
+            "郑州": 227265.71875,
+            "长沙": 222421.09375,
+            "成都": 221373.234375,
+            "武汉": 220981.953125,
+            "天津": 219457.9375,
+            "广州": 219044.46875
           },
           "total_amount_mean": {
-            "武汉": 1375.0391055718476,
-            "重庆": 1233.4865480895917,
-            "西安": 1237.2084063745021,
-            "深圳": 1284.3289519650655,
-            "成都": 1266.082384500745,
-            "长沙": 1184.564710982659,
-            "北京": 1293.8519713831479,
-            "南京": 1226.2993272171254,
-            "苏州": 1169.656038011696,
-            "郑州": 1153.5957035928145
+            "重庆": 397.24114990234375,
+            "西安": 386.44793701171875,
+            "深圳": 407.9116516113281,
+            "苏州": 408.6956787109375,
+            "郑州": 395.9333190917969,
+            "长沙": 380.8580322265625,
+            "成都": 394.6047058105469,
+            "武汉": 382.32171630859375,
+            "天津": 375.14178466796875,
+            "广州": 396.10211181640625
           },
           "total_amount_count": {
-            "武汉": 682,
-            "重庆": 759,
-            "西安": 753,
-            "深圳": 687,
-            "成都": 671,
-            "长沙": 692,
-            "北京": 629,
-            "南京": 654,
-            "苏州": 684,
-            "郑州": 668
+            "重庆": 642,
+            "西安": 638,
+            "深圳": 591,
+            "苏州": 586,
+            "郑州": 574,
+            "长沙": 584,
+            "成都": 561,
+            "武汉": 578,
+            "天津": 585,
+            "广州": 553
           },
           "customer_id_nunique": {
-            "武汉": 136,
-            "重庆": 144,
-            "西安": 146,
+            "重庆": 143,
+            "西安": 144,
             "深圳": 128,
-            "成都": 132,
+            "苏州": 135,
+            "郑州": 124,
             "长沙": 139,
-            "北京": 136,
-            "南京": 139,
-            "苏州": 136,
-            "郑州": 124
+            "成都": 130,
+            "武汉": 136,
+            "天津": 134,
+            "广州": 132
           }
         },
         "most_valuable_gender": "Female",
         "most_valuable_age_group": "55+",
-        "most_valuable_city": "武汉"
+        "most_valuable_city": "重庆"
       },
       "rfm_analysis": {
-        "high_value_customers": 288,
-        "at_risk_customers": 338,
-        "new_customers": 64
+        "high_value_customers": 313,
+        "at_risk_customers": 336,
+        "new_customers": 113
       }
     },
     "product_analysis": {
       "product_performance": {
         "total_products": 52,
         "top_products_by_revenue": {
-          "Samsung Galaxy": {
-            "total_revenue": 2116315.94,
-            "avg_order_value": 13832.130326797385,
-            "order_count": 153,
-            "total_quantity_sold": 443,
-            "avg_unit_price": 4780.840196078431
+          "Protein Powder": {
+            "total_revenue": 165792.125,
+            "avg_order_value": 808.7420654296875,
+            "order_count": 205,
+            "total_quantity_sold": 610,
+            "avg_unit_price": 273.5577697753906
           },
-          "MacBook Pro": {
-            "total_revenue": 2057145.2,
-            "avg_order_value": 10942.26170212766,
-            "order_count": 188,
-            "total_quantity_sold": 553,
-            "avg_unit_price": 3712.7786170212767
+          "Jeans": {
+            "total_revenue": 160645.921875,
+            "avg_order_value": 772.336181640625,
+            "order_count": 208,
+            "total_quantity_sold": 621,
+            "avg_unit_price": 261.9197082519531
           },
-          "iPad": {
-            "total_revenue": 1592778.55,
-            "avg_order_value": 9101.591714285714,
+          "Dumbbells": {
+            "total_revenue": 151827.6875,
+            "avg_order_value": 716.1683349609375,
+            "order_count": 212,
+            "total_quantity_sold": 637,
+            "avg_unit_price": 238.43605041503906
+          },
+          "Car Accessories": {
+            "total_revenue": 138837.203125,
+            "avg_order_value": 793.35546875,
             "order_count": 175,
-            "total_quantity_sold": 517,
-            "avg_unit_price": 3075.068457142857
+            "total_quantity_sold": 447,
+            "avg_unit_price": 312.4917297363281
           },
-          "iPhone 14": {
-            "total_revenue": 1025426.2,
-            "avg_order_value": 5961.78023255814,
-            "order_count": 172,
-            "total_quantity_sold": 527,
-            "avg_unit_price": 1944.743488372093
-          },
-          "Gaming Laptop": {
-            "total_revenue": 548949.21,
-            "avg_order_value": 2772.4707575757575,
-            "order_count": 198,
-            "total_quantity_sold": 639,
-            "avg_unit_price": 857.9963131313131
-          },
-          "AirPods": {
-            "total_revenue": 454486.54,
-            "avg_order_value": 2627.0898265895953,
-            "order_count": 173,
-            "total_quantity_sold": 527,
-            "avg_unit_price": 866.0436994219654
-          },
-          "Kitchen Set": {
-            "total_revenue": 311237.26,
-            "avg_order_value": 1533.188472906404,
+          "Jacket": {
+            "total_revenue": 134374.078125,
+            "avg_order_value": 661.9412841796875,
             "order_count": 203,
-            "total_quantity_sold": 630,
-            "avg_unit_price": 495.01408866995075
+            "total_quantity_sold": 620,
+            "avg_unit_price": 216.970947265625
           },
-          "Coffee Maker": {
-            "total_revenue": 235456.62,
-            "avg_order_value": 1232.757172774869,
-            "order_count": 191,
-            "total_quantity_sold": 539,
-            "avg_unit_price": 433.0441884816754
+          "Garden Tools": {
+            "total_revenue": 132560.515625,
+            "avg_order_value": 775.2077026367188,
+            "order_count": 171,
+            "total_quantity_sold": 518,
+            "avg_unit_price": 255.73800659179688
           },
-          "Tire Pump": {
-            "total_revenue": 224228.09,
-            "avg_order_value": 1173.969057591623,
-            "order_count": 191,
-            "total_quantity_sold": 571,
-            "avg_unit_price": 393.48277486910996
+          "Thermometer": {
+            "total_revenue": 132249.40625,
+            "avg_order_value": 645.1190795898438,
+            "order_count": 205,
+            "total_quantity_sold": 638,
+            "avg_unit_price": 207.86444091796875
           },
-          "Vacuum Cleaner": {
-            "total_revenue": 214224.73,
-            "avg_order_value": 1076.5061809045226,
-            "order_count": 199,
-            "total_quantity_sold": 580,
-            "avg_unit_price": 368.1838190954774
+          "Car Charger": {
+            "total_revenue": 131182.578125,
+            "avg_order_value": 669.2988891601562,
+            "order_count": 196,
+            "total_quantity_sold": 601,
+            "avg_unit_price": 218.3328094482422
+          },
+          "Sweater": {
+            "total_revenue": 130735.0625,
+            "avg_order_value": 782.8446655273438,
+            "order_count": 167,
+            "total_quantity_sold": 458,
+            "avg_unit_price": 286.8723449707031
+          },
+          "Dash Cam": {
+            "total_revenue": 119895.6328125,
+            "avg_order_value": 655.1674194335938,
+            "order_count": 183,
+            "total_quantity_sold": 534,
+            "avg_unit_price": 225.40318298339844
           }
         },
         "top_products_by_quantity": {
-          "Protein Powder": {
-            "total_revenue": 190742.21,
-            "avg_order_value": 863.0869230769231,
-            "order_count": 221,
-            "total_quantity_sold": 690,
-            "avg_unit_price": 276.3319004524887
-          },
-          "Jeans": {
-            "total_revenue": 175898.45,
-            "avg_order_value": 806.873623853211,
-            "order_count": 218,
-            "total_quantity_sold": 671,
-            "avg_unit_price": 263.89811926605506
-          },
           "Massage Gun": {
-            "total_revenue": 69856.58,
-            "avg_order_value": 324.91432558139536,
+            "total_revenue": 69856.578125,
+            "avg_order_value": 324.914306640625,
             "order_count": 215,
             "total_quantity_sold": 656,
-            "avg_unit_price": 106.91627906976744
+            "avg_unit_price": 106.9162826538086
           },
           "First Aid Kit": {
-            "total_revenue": 60543.66,
-            "avg_order_value": 271.49623318385653,
+            "total_revenue": 60543.66015625,
+            "avg_order_value": 271.4962463378906,
             "order_count": 223,
             "total_quantity_sold": 655,
-            "avg_unit_price": 92.50367713004484
-          },
-          "Gaming Laptop": {
-            "total_revenue": 548949.21,
-            "avg_order_value": 2772.4707575757575,
-            "order_count": 198,
-            "total_quantity_sold": 639,
-            "avg_unit_price": 857.9963131313131
+            "avg_unit_price": 92.50367736816406
           },
           "Thermometer": {
-            "total_revenue": 132249.41,
-            "avg_order_value": 645.1190731707318,
+            "total_revenue": 132249.40625,
+            "avg_order_value": 645.1190795898438,
             "order_count": 205,
             "total_quantity_sold": 638,
-            "avg_unit_price": 207.86443902439024
+            "avg_unit_price": 207.86444091796875
           },
           "Dumbbells": {
-            "total_revenue": 151827.69,
-            "avg_order_value": 716.1683490566038,
+            "total_revenue": 151827.6875,
+            "avg_order_value": 716.1683349609375,
             "order_count": 212,
             "total_quantity_sold": 637,
-            "avg_unit_price": 238.43603773584906
+            "avg_unit_price": 238.43605041503906
           },
           "T-Shirt": {
             "total_revenue": 23252.25,
-            "avg_order_value": 108.6553738317757,
+            "avg_order_value": 108.6553726196289,
             "order_count": 214,
             "total_quantity_sold": 637,
-            "avg_unit_price": 36.54780373831776
+            "avg_unit_price": 36.54780197143555
           },
-          "Kitchen Set": {
-            "total_revenue": 311237.26,
-            "avg_order_value": 1533.188472906404,
-            "order_count": 203,
-            "total_quantity_sold": 630,
-            "avg_unit_price": 495.01408866995075
+          "Jeans": {
+            "total_revenue": 160645.921875,
+            "avg_order_value": 772.336181640625,
+            "order_count": 208,
+            "total_quantity_sold": 621,
+            "avg_unit_price": 261.9197082519531
           },
           "Jacket": {
-            "total_revenue": 134374.08,
-            "avg_order_value": 661.9412807881773,
+            "total_revenue": 134374.078125,
+            "avg_order_value": 661.9412841796875,
             "order_count": 203,
             "total_quantity_sold": 620,
-            "avg_unit_price": 216.97093596059113
+            "avg_unit_price": 216.970947265625
+          },
+          "Skincare Set": {
+            "total_revenue": 66933.0625,
+            "avg_order_value": 317.2182922363281,
+            "order_count": 211,
+            "total_quantity_sold": 619,
+            "avg_unit_price": 108.25677490234375
+          },
+          "Organic Tea": {
+            "total_revenue": 8807.5302734375,
+            "avg_order_value": 46.60068893432617,
+            "order_count": 189,
+            "total_quantity_sold": 618,
+            "avg_unit_price": 14.207354545593262
+          },
+          "Chocolate": {
+            "total_revenue": 43054.80859375,
+            "avg_order_value": 218.5523223876953,
+            "order_count": 197,
+            "total_quantity_sold": 617,
+            "avg_unit_price": 69.93279266357422
           }
         },
         "most_popular_products": {
           "First Aid Kit": {
-            "total_revenue": 60543.66,
-            "avg_order_value": 271.49623318385653,
+            "total_revenue": 60543.66015625,
+            "avg_order_value": 271.4962463378906,
             "order_count": 223,
             "total_quantity_sold": 655,
-            "avg_unit_price": 92.50367713004484
-          },
-          "Protein Powder": {
-            "total_revenue": 190742.21,
-            "avg_order_value": 863.0869230769231,
-            "order_count": 221,
-            "total_quantity_sold": 690,
-            "avg_unit_price": 276.3319004524887
-          },
-          "Jeans": {
-            "total_revenue": 175898.45,
-            "avg_order_value": 806.873623853211,
-            "order_count": 218,
-            "total_quantity_sold": 671,
-            "avg_unit_price": 263.89811926605506
+            "avg_unit_price": 92.50367736816406
           },
           "Massage Gun": {
-            "total_revenue": 69856.58,
-            "avg_order_value": 324.91432558139536,
+            "total_revenue": 69856.578125,
+            "avg_order_value": 324.914306640625,
             "order_count": 215,
             "total_quantity_sold": 656,
-            "avg_unit_price": 106.91627906976744
+            "avg_unit_price": 106.9162826538086
           },
           "T-Shirt": {
             "total_revenue": 23252.25,
-            "avg_order_value": 108.6553738317757,
+            "avg_order_value": 108.6553726196289,
             "order_count": 214,
             "total_quantity_sold": 637,
-            "avg_unit_price": 36.54780373831776
+            "avg_unit_price": 36.54780197143555
           },
           "Dumbbells": {
-            "total_revenue": 151827.69,
-            "avg_order_value": 716.1683490566038,
+            "total_revenue": 151827.6875,
+            "avg_order_value": 716.1683349609375,
             "order_count": 212,
             "total_quantity_sold": 637,
-            "avg_unit_price": 238.43603773584906
+            "avg_unit_price": 238.43605041503906
           },
           "Skincare Set": {
-            "total_revenue": 66933.06,
-            "avg_order_value": 317.21829383886256,
+            "total_revenue": 66933.0625,
+            "avg_order_value": 317.2182922363281,
             "order_count": 211,
             "total_quantity_sold": 619,
-            "avg_unit_price": 108.25677725118483
+            "avg_unit_price": 108.25677490234375
           },
           "Dress": {
-            "total_revenue": 110353.42,
-            "avg_order_value": 525.4924761904762,
+            "total_revenue": 110353.421875,
+            "avg_order_value": 525.4924926757812,
             "order_count": 210,
             "total_quantity_sold": 589,
-            "avg_unit_price": 187.4622857142857
+            "avg_unit_price": 187.4622802734375
+          },
+          "Jeans": {
+            "total_revenue": 160645.921875,
+            "avg_order_value": 772.336181640625,
+            "order_count": 208,
+            "total_quantity_sold": 621,
+            "avg_unit_price": 261.9197082519531
           },
           "Face Mask": {
-            "total_revenue": 25801.76,
-            "avg_order_value": 124.64618357487922,
+            "total_revenue": 25801.759765625,
+            "avg_order_value": 124.64617919921875,
             "order_count": 207,
             "total_quantity_sold": 602,
-            "avg_unit_price": 42.444589371980676
+            "avg_unit_price": 42.4445915222168
+          },
+          "Protein Powder": {
+            "total_revenue": 165792.125,
+            "avg_order_value": 808.7420654296875,
+            "order_count": 205,
+            "total_quantity_sold": 610,
+            "avg_unit_price": 273.5577697753906
           },
           "Thermometer": {
-            "total_revenue": 132249.41,
-            "avg_order_value": 645.1190731707318,
+            "total_revenue": 132249.40625,
+            "avg_order_value": 645.1190795898438,
             "order_count": 205,
             "total_quantity_sold": 638,
-            "avg_unit_price": 207.86443902439024
+            "avg_unit_price": 207.86444091796875
           }
         },
         "highest_priced_products": {
-          "Samsung Galaxy": {
-            "total_revenue": 2116315.94,
-            "avg_order_value": 13832.130326797385,
-            "order_count": 153,
-            "total_quantity_sold": 443,
-            "avg_unit_price": 4780.840196078431
-          },
-          "MacBook Pro": {
-            "total_revenue": 2057145.2,
-            "avg_order_value": 10942.26170212766,
-            "order_count": 188,
-            "total_quantity_sold": 553,
-            "avg_unit_price": 3712.7786170212767
-          },
-          "iPad": {
-            "total_revenue": 1592778.55,
-            "avg_order_value": 9101.591714285714,
-            "order_count": 175,
-            "total_quantity_sold": 517,
-            "avg_unit_price": 3075.068457142857
-          },
-          "iPhone 14": {
-            "total_revenue": 1025426.2,
-            "avg_order_value": 5961.78023255814,
-            "order_count": 172,
-            "total_quantity_sold": 527,
-            "avg_unit_price": 1944.743488372093
-          },
-          "AirPods": {
-            "total_revenue": 454486.54,
-            "avg_order_value": 2627.0898265895953,
-            "order_count": 173,
-            "total_quantity_sold": 527,
-            "avg_unit_price": 866.0436994219654
-          },
-          "Gaming Laptop": {
-            "total_revenue": 548949.21,
-            "avg_order_value": 2772.4707575757575,
-            "order_count": 198,
-            "total_quantity_sold": 639,
-            "avg_unit_price": 857.9963131313131
-          },
           "Kitchen Set": {
-            "total_revenue": 311237.26,
-            "avg_order_value": 1533.188472906404,
-            "order_count": 203,
-            "total_quantity_sold": 630,
-            "avg_unit_price": 495.01408866995075
+            "total_revenue": 87577.578125,
+            "avg_order_value": 884.6220092773438,
+            "order_count": 99,
+            "total_quantity_sold": 182,
+            "avg_unit_price": 488.43414306640625
           },
           "Coffee Maker": {
-            "total_revenue": 235456.62,
-            "avg_order_value": 1232.757172774869,
-            "order_count": 191,
-            "total_quantity_sold": 539,
-            "avg_unit_price": 433.0441884816754
+            "total_revenue": 98205.078125,
+            "avg_order_value": 811.6122436523438,
+            "order_count": 121,
+            "total_quantity_sold": 229,
+            "avg_unit_price": 426.5450439453125
           },
           "Tennis Racket": {
-            "total_revenue": 208582.06,
-            "avg_order_value": 1178.4297175141244,
-            "order_count": 177,
-            "total_quantity_sold": 527,
-            "avg_unit_price": 395.79355932203396
+            "total_revenue": 95602.1875,
+            "avg_order_value": 824.1567993164062,
+            "order_count": 116,
+            "total_quantity_sold": 243,
+            "avg_unit_price": 393.914306640625
           },
           "Tire Pump": {
-            "total_revenue": 224228.09,
-            "avg_order_value": 1173.969057591623,
-            "order_count": 191,
-            "total_quantity_sold": 571,
-            "avg_unit_price": 393.48277486910996
+            "total_revenue": 105509.8515625,
+            "avg_order_value": 837.3797607421875,
+            "order_count": 126,
+            "total_quantity_sold": 274,
+            "avg_unit_price": 389.6007995605469
+          },
+          "Vacuum Cleaner": {
+            "total_revenue": 107909.421875,
+            "avg_order_value": 776.3267822265625,
+            "order_count": 139,
+            "total_quantity_sold": 300,
+            "avg_unit_price": 362.5457458496094
+          },
+          "Car Accessories": {
+            "total_revenue": 138837.203125,
+            "avg_order_value": 793.35546875,
+            "order_count": 175,
+            "total_quantity_sold": 447,
+            "avg_unit_price": 312.4917297363281
+          },
+          "Sweater": {
+            "total_revenue": 130735.0625,
+            "avg_order_value": 782.8446655273438,
+            "order_count": 167,
+            "total_quantity_sold": 458,
+            "avg_unit_price": 286.8723449707031
+          },
+          "Protein Powder": {
+            "total_revenue": 165792.125,
+            "avg_order_value": 808.7420654296875,
+            "order_count": 205,
+            "total_quantity_sold": 610,
+            "avg_unit_price": 273.5577697753906
+          },
+          "Jeans": {
+            "total_revenue": 160645.921875,
+            "avg_order_value": 772.336181640625,
+            "order_count": 208,
+            "total_quantity_sold": 621,
+            "avg_unit_price": 261.9197082519531
+          },
+          "Garden Tools": {
+            "total_revenue": 132560.515625,
+            "avg_order_value": 775.2077026367188,
+            "order_count": 171,
+            "total_quantity_sold": 518,
+            "avg_unit_price": 255.73800659179688
           }
         }
       },
       "category_analysis": {
         "total_categories": 10,
         "category_revenue_ranking": {
-          "Electronics": {
-            "total_revenue": 7795101.64,
-            "avg_order_value": 7360.813635505193,
-            "order_count": 1059,
-            "total_quantity_sold": 3206,
+          "Clothing": {
+            "total_revenue": 574430.3125,
+            "avg_order_value": 482.3092346191406,
+            "order_count": 1191,
+            "total_quantity_sold": 3516,
             "unique_products": 6,
-            "unique_customers": 824
-          },
-          "Home & Garden": {
-            "total_revenue": 976359.66,
-            "avg_order_value": 1028.8299894625923,
-            "order_count": 949,
-            "total_quantity_sold": 2839,
-            "unique_products": 5,
-            "unique_customers": 750
+            "unique_customers": 904
           },
           "Automotive": {
-            "total_revenue": 704749.52,
-            "avg_order_value": 743.4066666666666,
-            "order_count": 948,
-            "total_quantity_sold": 2845,
+            "total_revenue": 552056.0,
+            "avg_order_value": 639.694091796875,
+            "order_count": 863,
+            "total_quantity_sold": 2450,
             "unique_products": 5,
-            "unique_customers": 759
+            "unique_customers": 703
           },
           "Sports": {
-            "total_revenue": 638620.69,
-            "avg_order_value": 665.9235557872784,
-            "order_count": 959,
-            "total_quantity_sold": 2869,
+            "total_revenue": 525640.8125,
+            "avg_order_value": 585.3461303710938,
+            "order_count": 898,
+            "total_quantity_sold": 2585,
             "unique_products": 5,
-            "unique_customers": 764
+            "unique_customers": 715
           },
-          "Clothing": {
-            "total_revenue": 616704.83,
-            "avg_order_value": 506.3258045977011,
-            "order_count": 1218,
-            "total_quantity_sold": 3651,
-            "unique_products": 6,
-            "unique_customers": 915
+          "Home & Garden": {
+            "total_revenue": 503167.78125,
+            "avg_order_value": 707.6902465820312,
+            "order_count": 711,
+            "total_quantity_sold": 1781,
+            "unique_products": 5,
+            "unique_customers": 606
           },
           "Health": {
-            "total_revenue": 471289.11,
-            "avg_order_value": 442.52498591549295,
-            "order_count": 1065,
-            "total_quantity_sold": 3241,
+            "total_revenue": 446339.03125,
+            "avg_order_value": 425.4900207519531,
+            "order_count": 1049,
+            "total_quantity_sold": 3161,
             "unique_products": 5,
-            "unique_customers": 831
+            "unique_customers": 820
           },
           "Toys": {
-            "total_revenue": 277987.55,
-            "avg_order_value": 300.20253779697623,
+            "total_revenue": 277987.5625,
+            "avg_order_value": 300.2025451660156,
             "order_count": 926,
             "total_quantity_sold": 2799,
             "unique_products": 5,
             "unique_customers": 752
           },
           "Beauty": {
-            "total_revenue": 239701.96,
-            "avg_order_value": 240.90649246231155,
+            "total_revenue": 239701.953125,
+            "avg_order_value": 240.90647888183594,
             "order_count": 995,
             "total_quantity_sold": 2924,
             "unique_products": 5,
             "unique_customers": 774
           },
           "Food": {
-            "total_revenue": 118241.8,
-            "avg_order_value": 122.53036269430052,
+            "total_revenue": 118241.796875,
+            "avg_order_value": 122.53035736083984,
             "order_count": 965,
             "total_quantity_sold": 2950,
             "unique_products": 5,
             "unique_customers": 753
           },
           "Books": {
-            "total_revenue": 99680.66,
-            "avg_order_value": 108.82168122270743,
+            "total_revenue": 99680.65625,
+            "avg_order_value": 108.8216781616211,
             "order_count": 916,
             "total_quantity_sold": 2739,
             "unique_products": 5,
             "unique_customers": 759
+          },
+          "Electronics": {
+            "total_revenue": 0.0,
+            "avg_order_value": NaN,
+            "order_count": 0,
+            "total_quantity_sold": 0,
+            "unique_products": 0,
+            "unique_customers": 0
           }
         },
         "category_market_share": {
-          "Automotive": 5.903197338199056,
-          "Beauty": 2.0078168655341497,
-          "Books": 0.8349556687628891,
-          "Clothing": 5.165708109897685,
-          "Electronics": 65.29415337840754,
-          "Food": 0.9904294493508348,
-          "Health": 3.9476616027694518,
-          "Home & Garden": 8.178286869974647,
-          "Sports": 5.349282050347255,
-          "Toys": 2.3285086667564907
+          "Automotive": 16.54226303100586,
+          "Beauty": 7.1826276779174805,
+          "Books": 2.9869139194488525,
+          "Clothing": 17.21270751953125,
+          "Electronics": 0.0,
+          "Food": 3.543095350265503,
+          "Health": 13.374473571777344,
+          "Home & Garden": 15.077336311340332,
+          "Sports": 15.750737190246582,
+          "Toys": 8.329849243164062
         },
-        "most_profitable_category": "Electronics",
+        "most_profitable_category": "Clothing",
         "most_popular_category": "Clothing",
         "category_diversity": {
           "Automotive": 5,
           "Beauty": 5,
           "Books": 5,
           "Clothing": 6,
-          "Electronics": 6,
+          "Electronics": 0,
           "Food": 5,
           "Health": 5,
           "Home & Garden": 5,
@@ -688,112 +688,112 @@
       "pricing_insights": {
         "price_analysis_by_category": {
           "Automotive": {
-            "mean": 251.32836497890295,
-            "median": 243.22,
-            "min": 75.62,
-            "max": 465.22,
-            "std": 104.5264667219281
+            "mean": 237.83238220214844,
+            "median": 233.67999267578125,
+            "min": 75.62000274658203,
+            "max": 465.2200012207031,
+            "std": 98.8758316040039
           },
           "Beauty": {
-            "mean": 82.58646231155778,
-            "median": 102.05,
-            "min": 15.07,
-            "max": 150.51,
-            "std": 45.496089368585785
+            "mean": 82.58646392822266,
+            "median": 102.05000305175781,
+            "min": 15.069999694824219,
+            "max": 150.50999450683594,
+            "std": 45.496089935302734
           },
           "Books": {
-            "mean": 36.64165938864629,
-            "median": 30.11,
-            "min": 21.46,
-            "max": 82.73,
-            "std": 16.65587693841673
+            "mean": 36.64166259765625,
+            "median": 30.110000610351562,
+            "min": 21.459999084472656,
+            "max": 82.7300033569336,
+            "std": 16.65587615966797
           },
           "Clothing": {
-            "mean": 169.8582183908046,
-            "median": 202.615,
-            "min": 20.61,
-            "max": 349.74,
-            "std": 105.22549688300842
+            "mean": 166.6099090576172,
+            "median": 199.8300018310547,
+            "min": 20.610000610351562,
+            "max": 349.739990234375,
+            "std": 104.12760925292969
           },
           "Electronics": {
-            "mean": 2475.7437393767705,
-            "median": 2263.8,
-            "min": 691.91,
-            "max": 5706.48,
-            "std": 1469.0329851965396
+            "mean": NaN,
+            "median": NaN,
+            "min": NaN,
+            "max": NaN,
+            "std": NaN
           },
           "Food": {
-            "mean": 40.3639896373057,
-            "median": 45.19,
-            "min": 11.47,
-            "max": 83.8,
-            "std": 22.032912681349224
+            "mean": 40.363990783691406,
+            "median": 45.189998626708984,
+            "min": 11.470000267028809,
+            "max": 83.80000305175781,
+            "std": 22.032913208007812
           },
           "Health": {
-            "mean": 143.930441314554,
-            "median": 109.14,
-            "min": 23.81,
-            "max": 328.17,
-            "std": 89.94210232254854
+            "mean": 141.36883544921875,
+            "median": 108.45999908447266,
+            "min": 23.809999465942383,
+            "max": 328.1700134277344,
+            "std": 88.17164611816406
           },
           "Home & Garden": {
-            "mean": 344.24949420442573,
-            "median": 367.48,
-            "min": 110.32,
-            "max": 599.0,
-            "std": 133.36354634387462
+            "mean": 308.5690612792969,
+            "median": 297.7699890136719,
+            "min": 110.31999969482422,
+            "max": 594.5,
+            "std": 129.76551818847656
           },
           "Sports": {
-            "mean": 222.69282586027114,
-            "median": 200.07,
-            "min": 96.07,
-            "max": 476.27,
-            "std": 95.49274835589084
+            "mean": 210.69155883789062,
+            "median": 194.04501342773438,
+            "min": 96.06999969482422,
+            "max": 476.2699890136719,
+            "std": 85.51751708984375
           },
           "Toys": {
-            "mean": 98.67899568034558,
-            "median": 118.99000000000001,
-            "min": 19.14,
-            "max": 173.62,
-            "std": 50.32950800653073
+            "mean": 98.67899322509766,
+            "median": 118.98999786376953,
+            "min": 19.139999389648438,
+            "max": 173.6199951171875,
+            "std": 50.32950973510742
           }
         },
-        "overall_avg_price": 400.656562,
+        "overall_avg_price": "141.72382",
         "price_range": {
-          "min": 11.47,
-          "max": 5706.48
+          "min": "11.47",
+          "max": "594.5"
         },
-        "most_expensive_category": "Electronics",
+        "most_expensive_category": "Home & Garden",
         "most_affordable_category": "Books"
       },
       "inventory_insights": {
         "fast_moving_products": [
+          "Action Figure",
+          "Chocolate",
           "Dumbbells",
           "First Aid Kit",
-          "Gaming Laptop",
           "Jacket",
           "Jeans",
-          "Kitchen Set",
           "Massage Gun",
-          "Protein Powder",
+          "Organic Tea",
           "Skincare Set",
           "T-Shirt",
           "Thermometer"
         ],
         "slow_moving_products": [
-          "AI Handbook",
           "AirPods",
-          "Board Game",
-          "Dash Cam",
-          "Garden Tools",
-          "Machine Learning",
-          "Python Programming",
+          "Coffee Maker",
+          "Gaming Laptop",
+          "Kitchen Set",
+          "MacBook Pro",
           "Samsung Galaxy",
           "Tennis Racket",
+          "Tire Pump",
+          "Vacuum Cleaner",
           "iPad",
           "iPhone 14"
         ],
-        "avg_quantity_per_order": 3.0063
+        "avg_quantity_per_order": 2.92518205308903
       }
     }
   },
