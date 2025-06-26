@@ -195,65 +195,112 @@ class DataProcessor:
         """
         Clean and preprocess the data
         清洗和预处理数据
-        
+    
         Args:
             df: Raw DataFrame
-        
         Returns:
             Cleaned DataFrame
         """
         self.logger.info("Starting data cleaning process")
         
-        # Create a copy to avoid modifying original data
+        # Make a copy of the original DataFrame to avoid modifying it directly
         cleaned_df = df.copy()
         
-        # Convert data types
-        cleaned_df['order_date'] = pd.to_datetime(cleaned_df['order_date'])
-        cleaned_df['quantity'] = pd.to_numeric(cleaned_df['quantity'], errors='coerce')
-        cleaned_df['unit_price'] = pd.to_numeric(cleaned_df['unit_price'], errors='coerce')
-        cleaned_df['total_amount'] = pd.to_numeric(cleaned_df['total_amount'], errors='coerce')
-        cleaned_df['customer_age'] = pd.to_numeric(cleaned_df['customer_age'], errors='coerce')
+        # 处理缺失值
+        self._handle_missing_values(cleaned_df)
         
-        # Handle missing values
-        initial_rows = len(cleaned_df)
-        cleaned_df = cleaned_df.dropna(subset=['order_id', 'customer_id', 'product_name'])
+        # 转换数据类型
+        self._convert_data_types(cleaned_df)
         
-        # Fill missing numerical values with median
-        numerical_columns = ['quantity', 'unit_price', 'total_amount', 'customer_age']
-        for col in numerical_columns:
-            if cleaned_df[col].isnull().any():
-                median_value = cleaned_df[col].median()
-                cleaned_df[col].fillna(median_value, inplace=True)
+        # 移除重复行
+        self._remove_duplicates(cleaned_df)
         
-        # Remove duplicates
-        cleaned_df = cleaned_df.drop_duplicates(subset=['order_id'])
+        # 过滤异常值
+        self._filter_outliers(cleaned_df)
         
-        # Remove outliers (orders with unrealistic values)
-        cleaned_df = cleaned_df[
-            (cleaned_df['quantity'] > 0) & (cleaned_df['quantity'] <= 100) &
-            (cleaned_df['unit_price'] > 0) & (cleaned_df['unit_price'] <= 50000) &
-            (cleaned_df['total_amount'] > 0) & (cleaned_df['total_amount'] <= 500000) &
-            (cleaned_df['customer_age'] >= 18) & (cleaned_df['customer_age'] <= 100)
-        ]
+        # 删除处理后仍存在的 NaN 值行
+        self._drop_remaining_nan(cleaned_df)
         
-        # Add derived columns
-        cleaned_df['order_year'] = cleaned_df['order_date'].dt.year
-        cleaned_df['order_month'] = cleaned_df['order_date'].dt.month
-        cleaned_df['order_quarter'] = cleaned_df['order_date'].dt.quarter
-        cleaned_df['order_weekday'] = cleaned_df['order_date'].dt.day_name()
-        
-        # Add customer age groups
-        cleaned_df['age_group'] = pd.cut(
-            cleaned_df['customer_age'], 
-            bins=[0, 25, 35, 45, 55, 100], 
-            labels=['18-25', '26-35', '36-45', '46-55', '55+']
-        )
-        
-        final_rows = len(cleaned_df)
-        self.logger.info(f"Data cleaning completed. Rows: {initial_rows} -> {final_rows}")
-        
+        self.logger.info("Data cleaning process completed")
         return cleaned_df
-    
+
+    def _handle_missing_values(self, df: pd.DataFrame) -> None:
+        """
+        处理 DataFrame 中的缺失值
+        
+        Args:
+            df: 待处理的 DataFrame
+        """
+        missing_values = df.isnull().sum()
+        for column in missing_values[missing_values > 0].index:
+            if df[column].dtype == 'object':
+                # 对对象类型列，用 'Unknown' 填充缺失值
+                df[column].fillna('Unknown', inplace=True)
+            elif pd.api.types.is_numeric_dtype(df[column]):
+                # 对数值类型列，用中位数填充缺失值
+                df[column].fillna(df[column].median(), inplace=True)
+        self.logger.info(f"Handled missing values in columns: {', '.join(missing_values[missing_values > 0].index)}")
+
+    def _convert_data_types(self, df: pd.DataFrame) -> None:
+        """
+        转换 DataFrame 中的数据类型
+        
+        Args:
+            df: 待处理的 DataFrame
+        """
+        try:
+            df['order_date'] = pd.to_datetime(df['order_date'])
+            numeric_columns = ['quantity', 'unit_price', 'total_amount', 'customer_age']
+            for col in numeric_columns:
+                df[col] = pd.to_numeric(df[col], errors='coerce')
+            self.logger.info("Converted data types successfully")
+        except Exception as e:
+            self.logger.warning(f"Error converting data types: {str(e)}")
+
+    def _remove_duplicates(self, df: pd.DataFrame) -> None:
+        """
+        移除 DataFrame 中的重复行
+        
+        Args:
+            df: 待处理的 DataFrame
+        """
+        initial_count = len(df)
+        df.drop_duplicates(inplace=True)
+        removed_count = initial_count - len(df)
+        if removed_count > 0:
+            self.logger.info(f"Removed {removed_count} duplicate rows")
+
+    def _filter_outliers(self, df: pd.DataFrame) -> None:
+        """
+        过滤 DataFrame 中数值列的异常值
+        
+        Args:
+            df: 待处理的 DataFrame
+        """
+        numeric_columns = ['quantity', 'unit_price', 'total_amount', 'customer_age']
+        for col in numeric_columns:
+            q1 = df[col].quantile(0.05)
+            q3 = df[col].quantile(0.95)
+            iqr = q3 - q1
+            lower_bound = q1 - 1.5 * iqr
+            upper_bound = q3 + 1.5 * iqr
+            df[col] = np.where((df[col] < lower_bound), lower_bound, 
+                              np.where((df[col] > upper_bound), upper_bound, df[col]))
+        self.logger.info("Handled outliers in numeric columns")
+
+    def _drop_remaining_nan(self, df: pd.DataFrame) -> None:
+        """
+        删除处理后仍存在的 NaN 值行
+        
+        Args:
+            df: 待处理的 DataFrame
+        """
+        before_drop = len(df)
+        df.dropna(inplace=True)
+        after_drop = len(df)
+        if before_drop != after_drop:
+            self.logger.info(f"Dropped {before_drop - after_drop} rows with remaining NaN values")
+
     def save_data(self, df: pd.DataFrame, file_path: Path) -> None:
         """
         Save DataFrame to CSV file

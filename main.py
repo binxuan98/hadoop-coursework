@@ -12,6 +12,7 @@ Description: This is the main script to run the complete e-commerce order analys
 import sys
 import logging
 from pathlib import Path
+import joblib
 
 # Add src directory to Python path
 sys.path.append(str(Path(__file__).parent / "src"))
@@ -56,11 +57,22 @@ def main():
             logger.info("Generating sample data / 生成示例数据")
             processor.generate_sample_data(output_file=SAMPLE_DATA_FILE)
         
-        # Load and clean data
-        logger.info("Loading and cleaning data / 加载和清洗数据")
-        df = processor.load_data(SAMPLE_DATA_FILE)
-        cleaned_df = processor.clean_data(df)
-        processor.save_data(cleaned_df, PROCESSED_DATA_FILE)
+        # Add cache mechanism
+        if PROCESSED_DATA_FILE.exists():
+            logger.info("Loading processed data from cache / 从缓存加载已处理数据")
+            try:
+                df = joblib.load(PROCESSED_DATA_FILE)
+            except Exception as e:
+                logger.warning(f"Failed to load cached data: {str(e)}. Loading and cleaning data from scratch. / 加载缓存数据失败: {str(e)}。重新加载和清洗数据。")
+                df = processor.load_data(SAMPLE_DATA_FILE)
+                cleaned_df = processor.clean_data(df)
+                processor.save_data(cleaned_df, PROCESSED_DATA_FILE)
+        else:
+            # Load and clean data
+            logger.info("Loading and cleaning data / 加载和清洗数据")
+            df = processor.load_data(SAMPLE_DATA_FILE)
+            cleaned_df = processor.clean_data(df)
+            processor.save_data(cleaned_df, PROCESSED_DATA_FILE)
         
         # Step 2: Data Analysis
         logger.info("Step 2: Data Analysis / 步骤2：数据分析")
