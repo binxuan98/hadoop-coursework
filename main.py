@@ -21,6 +21,8 @@ from src.data_utils import DataProcessor
 from src.analysis import OrderAnalyzer
 from src.visualization import DataVisualizer
 from src.evaluation import ProjectEvaluator
+from functools import lru_cache
+
 
 def setup_logging():
     """
@@ -37,6 +39,20 @@ def setup_logging():
     )
     return logging.getLogger(__name__)
 
+@lru_cache(maxsize=1)
+def cached_load_and_clean_data(processor):
+    """
+    缓存数据加载和清洗结果，避免重复操作
+    """
+    if not SAMPLE_DATA_FILE.exists():
+        logger = logging.getLogger(__name__)
+        logger.info("Generating sample data / 生成示例数据")
+        processor.generate_sample_data(output_file=SAMPLE_DATA_FILE)
+    df = processor.load_data(SAMPLE_DATA_FILE)
+    cleaned_df = processor.clean_data(df)
+    processor.save_data(cleaned_df, PROCESSED_DATA_FILE)
+    return cleaned_df
+
 def main():
     """
     Main function to run the complete analysis pipeline
@@ -51,16 +67,8 @@ def main():
         logger.info("Step 1: Data Processing / 步骤1：数据处理")
         processor = DataProcessor()
         
-        # Generate sample data if not exists
-        if not SAMPLE_DATA_FILE.exists():
-            logger.info("Generating sample data / 生成示例数据")
-            processor.generate_sample_data(output_file=SAMPLE_DATA_FILE)
-        
-        # Load and clean data
-        logger.info("Loading and cleaning data / 加载和清洗数据")
-        df = processor.load_data(SAMPLE_DATA_FILE)
-        cleaned_df = processor.clean_data(df)
-        processor.save_data(cleaned_df, PROCESSED_DATA_FILE)
+        # 使用缓存加载和清洗数据
+        cleaned_df = cached_load_and_clean_data(processor)
         
         # Step 2: Data Analysis
         logger.info("Step 2: Data Analysis / 步骤2：数据分析")

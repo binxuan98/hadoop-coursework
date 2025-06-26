@@ -2,26 +2,26 @@
 # E-commerce Order Analysis Report
 # 电商订单分析报告
 
-**Generated on:** 2025-05-28T00:24:49.059231
+**Generated on:** 2025-06-26T11:16:34.713167
 
 **Analysis Period:** 2023-01-01T00:00:00 to 2023-12-31T00:00:00
 
-**Total Records:** 10,000
+**Total Records:** 8,514
 
 ## Executive Summary / 执行摘要
 
 ### Key Metrics / 关键指标
-- **Total Revenue / 总收入:** ¥11,938,437.42
-- **Total Orders / 总订单数:** 10,000
-- **Average Order Value / 平均订单价值:** ¥1193.84
-- **Total Customers / 总客户数:** 1,985
-- **Customer Retention Rate / 客户留存率:** 96.78%
+- **Total Revenue / 总收入:** ¥3,337,246.00
+- **Total Orders / 总订单数:** 8,514
+- **Average Order Value / 平均订单价值:** ¥391.97
+- **Total Customers / 总客户数:** 1,974
+- **Customer Retention Rate / 客户留存率:** 94.28%
 
 ### Top Insights / 主要洞察
-- Most profitable category: Electronics
+- Most profitable category: Clothing
 - Most valuable customer segment: 55+
-- Peak sales month: (2023, 12)
-- Repeat customer rate: 96.8%
+- Peak sales month: (np.int32(2023), np.int32(10))
+- Repeat customer rate: 94.3%
 
 
 ## Recommendations / 建议

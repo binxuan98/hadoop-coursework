@@ -1,7 +1,7 @@
 {
-  "overall_score": 86.125,
+  "overall_score": 85.725,
   "component_scores": {
-    "data_cleaning": 85.0,
+    "data_cleaning": 83.0,
     "data_analysis": 100.0,
     "visualization": 62.50000000000001,
     "code_quality": 90.0,
@@ -14,7 +14,7 @@
     "code_quality": 0.15,
     "report_writing": 0.1
   },
-  "evaluation_date": "2025-05-28T00:24:49.080699",
+  "evaluation_date": "2025-06-26T11:16:34.753337",
   "detailed_feedback": {
     "data_cleaning": {
       "strengths": [],

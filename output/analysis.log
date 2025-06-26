@@ -144,3 +144,90 @@
 2025-05-28 00:24:49,081 - __main__ - INFO - Analysis completed successfully! / åˆ†æžæˆåŠŸå®Œæˆï¼
 2025-05-28 00:24:49,081 - __main__ - INFO - Project evaluation score: 86.12/100
 2025-05-28 00:24:49,081 - __main__ - INFO - é¡¹ç›®è¯„ä¼°å¾—åˆ†: 86.12/100
+2025-06-26 10:19:15,130 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-06-26 10:19:15,131 - __main__ - INFO - ¿ªÊ¼µçÉÌ¶©µ¥·ÖÎöÏîÄ¿
+2025-06-26 10:19:15,133 - __main__ - INFO - Step 1: Data Processing / ²½Öè1£ºÊý¾Ý´¦Àí
+2025-06-26 10:19:15,133 - __main__ - INFO - Loading and cleaning data / ¼ÓÔØºÍÇåÏ´Êý¾Ý
+2025-06-26 10:19:15,161 - src.data_utils - INFO - Loaded 10000 records from c:\Users\delet\hadoop-coursework\data\raw\sample_orders.csv
+2025-06-26 10:19:15,162 - src.data_utils - INFO - Starting data cleaning process
+2025-06-26 10:19:15,193 - src.data_utils - INFO - Data cleaning completed. Rows: 10000 -> 10000
+2025-06-26 10:19:15,240 - src.data_utils - INFO - Data saved to c:\Users\delet\hadoop-coursework\data\processed\cleaned_orders.csv
+2025-06-26 10:19:15,240 - __main__ - INFO - Step 2: Data Analysis / ²½Öè2£ºÊý¾Ý·ÖÎö
+2025-06-26 10:19:15,241 - src.analysis - INFO - OrderAnalyzer initialized with 10000 orders
+2025-06-26 10:19:15,241 - src.analysis - INFO - Calculating basic statistics
+2025-06-26 10:19:15,246 - src.analysis - INFO - Basic statistics calculated: 10000 orders, 11938437.42 total revenue
+2025-06-26 10:19:15,246 - src.analysis - INFO - Performing time series analysis
+2025-06-26 10:19:15,258 - src.analysis - INFO - Performing customer analysis
+2025-06-26 10:19:15,287 - src.analysis - INFO - Performing product analysis
+2025-06-26 10:19:15,299 - __main__ - INFO - Step 3: Data Visualization / ²½Öè3£ºÊý¾Ý¿ÉÊÓ»¯
+2025-06-26 10:19:15,301 - src.visualization - INFO - DataVisualizer initialized with 10000 records
+2025-06-26 10:19:15,301 - src.visualization - INFO - Creating sales trend visualization
+2025-06-26 10:20:02,193 - src.visualization - INFO - Sales trend chart saved to c:\Users\delet\hadoop-coursework\output\charts\sales_trend.png
+2025-06-26 10:20:02,193 - src.visualization - INFO - Creating category distribution visualization
+2025-06-26 10:20:09,568 - src.visualization - INFO - Category distribution chart saved to c:\Users\delet\hadoop-coursework\output\charts\category_distribution.png
+2025-06-26 10:20:09,568 - src.visualization - INFO - Creating customer demographics visualization
+2025-06-26 10:20:15,739 - src.visualization - INFO - Customer demographics chart saved to c:\Users\delet\hadoop-coursework\output\charts\customer_demographics.png
+2025-06-26 10:20:15,740 - src.visualization - INFO - Creating top 15 products visualization
+2025-06-26 10:20:21,800 - src.visualization - INFO - Top products chart saved to c:\Users\delet\hadoop-coursework\output\charts\top_products.png
+2025-06-26 10:20:21,800 - src.visualization - INFO - Creating correlation matrix visualization
+2025-06-26 10:20:27,903 - src.visualization - INFO - Correlation matrix chart saved to c:\Users\delet\hadoop-coursework\output\charts\correlation_matrix.png
+2025-06-26 10:20:27,903 - __main__ - INFO - Step 4: Generate Report / ²½Öè4£ºÉú³É±¨¸æ
+2025-06-26 10:20:27,903 - src.analysis - INFO - Generating comprehensive analysis report
+2025-06-26 10:20:27,906 - src.analysis - INFO - Reports generated: c:\Users\delet\hadoop-coursework\output\reports\analysis_report.json, c:\Users\delet\hadoop-coursework\output\reports\analysis_report.md
+2025-06-26 10:20:27,906 - __main__ - INFO - Step 5: Project Evaluation / ²½Öè5£ºÏîÄ¿ÆÀ¹À
+2025-06-26 10:20:27,906 - src.evaluation - INFO - Starting project evaluation
+2025-06-26 10:20:27,906 - src.evaluation - INFO - Evaluating data cleaning quality
+2025-06-26 10:20:27,920 - src.evaluation - INFO - Evaluating data analysis quality
+2025-06-26 10:20:27,930 - src.evaluation - INFO - Evaluating visualization quality
+2025-06-26 10:20:27,931 - src.evaluation - INFO - Evaluating code quality
+2025-06-26 10:20:27,932 - src.evaluation - INFO - Evaluating report writing quality
+2025-06-26 10:20:27,947 - src.evaluation - INFO - Evaluation reports saved: c:\Users\delet\hadoop-coursework\output\reports\evaluation_report.json, c:\Users\delet\hadoop-coursework\output\reports\evaluation_report.md
+2025-06-26 10:20:27,947 - src.evaluation - INFO - Project evaluation completed. Overall score: 86.12/100
+2025-06-26 10:20:27,947 - __main__ - INFO - Analysis completed successfully! / ·ÖÎö³É¹¦Íê³É£¡
+2025-06-26 10:20:27,947 - __main__ - INFO - Project evaluation score: 86.12/100
+2025-06-26 10:20:27,947 - __main__ - INFO - ÏîÄ¿ÆÀ¹ÀµÃ·Ö: 86.12/100
+2025-06-26 11:16:15,517 - __main__ - INFO - Starting E-commerce Order Analysis Project
+2025-06-26 11:16:15,517 - __main__ - INFO - ¿ªÊ¼µçÉÌ¶©µ¥·ÖÎöÏîÄ¿
+2025-06-26 11:16:15,517 - __main__ - INFO - Step 1: Data Processing / ²½Öè1£ºÊý¾Ý´¦Àí
+2025-06-26 11:16:15,533 - src.data_utils - INFO - Loaded 10000 records from c:\Users\delet\hadoop-coursework\data\raw\sample_orders.csv
+2025-06-26 11:16:15,534 - src.data_utils - INFO - Starting data cleaning process
+2025-06-26 11:16:15,545 - src.data_utils - INFO - Handled outliers in quantity using IQR method: removed values outside [-1.0, 7.0]
+2025-06-26 11:16:15,547 - src.data_utils - INFO - Handled outliers in unit_price using IQR method: removed values outside [-302.2400131225586, 634.4800186157227]
+2025-06-26 11:16:15,549 - src.data_utils - INFO - Handled outliers in total_amount using IQR method: removed values outside [-706.1799850463867, 1483.099983215332]
+2025-06-26 11:16:15,550 - src.data_utils - INFO - Handled outliers in customer_age using IQR method: removed values outside [-5.5, 94.5]
+2025-06-26 11:16:15,555 - src.data_utils - INFO - Data cleaning completed. Rows: 10000 -> 8514
+2025-06-26 11:16:15,587 - src.data_utils - INFO - Data saved to c:\Users\delet\hadoop-coursework\data\processed\cleaned_orders.csv
+2025-06-26 11:16:15,587 - __main__ - INFO - Step 2: Data Analysis / ²½Öè2£ºÊý¾Ý·ÖÎö
+2025-06-26 11:16:15,588 - src.analysis - INFO - OrderAnalyzer initialized with 8514 orders
+2025-06-26 11:16:15,588 - src.analysis - INFO - Calculating basic statistics
+2025-06-26 11:16:15,591 - src.analysis - INFO - Basic statistics calculated: 8514 orders, 3337246.00 total revenue
+2025-06-26 11:16:15,591 - src.analysis - INFO - Performing time series analysis
+2025-06-26 11:16:15,599 - src.analysis - INFO - Performing customer analysis
+2025-06-26 11:16:15,620 - src.analysis - INFO - Performing product analysis
+2025-06-26 11:16:15,631 - __main__ - INFO - Step 3: Data Visualization / ²½Öè3£ºÊý¾Ý¿ÉÊÓ»¯
+2025-06-26 11:16:15,632 - src.visualization - INFO - DataVisualizer initialized with 8514 records
+2025-06-26 11:16:15,633 - src.visualization - INFO - Creating sales trend visualization
+2025-06-26 11:16:19,727 - src.visualization - INFO - Sales trend chart saved to c:\Users\delet\hadoop-coursework\output\charts\sales_trend.png
+2025-06-26 11:16:19,727 - src.visualization - INFO - Creating category distribution visualization
+2025-06-26 11:16:23,984 - src.visualization - INFO - Category distribution chart saved to c:\Users\delet\hadoop-coursework\output\charts\category_distribution.png
+2025-06-26 11:16:23,984 - src.visualization - INFO - Creating customer demographics visualization
+2025-06-26 11:16:30,034 - src.visualization - INFO - Customer demographics chart saved to c:\Users\delet\hadoop-coursework\output\charts\customer_demographics.png
+2025-06-26 11:16:30,034 - src.visualization - INFO - Creating top 15 products visualization
+2025-06-26 11:16:32,592 - src.visualization - INFO - Top products chart saved to c:\Users\delet\hadoop-coursework\output\charts\top_products.png
+2025-06-26 11:16:32,592 - src.visualization - INFO - Creating correlation matrix visualization
+2025-06-26 11:16:34,712 - src.visualization - INFO - Correlation matrix chart saved to c:\Users\delet\hadoop-coursework\output\charts\correlation_matrix.png
+2025-06-26 11:16:34,712 - __main__ - INFO - Step 4: Generate Report / ²½Öè4£ºÉú³É±¨¸æ
+2025-06-26 11:16:34,713 - src.analysis - INFO - Generating comprehensive analysis report
+2025-06-26 11:16:34,716 - src.analysis - INFO - Reports generated: c:\Users\delet\hadoop-coursework\output\reports\analysis_report.json, c:\Users\delet\hadoop-coursework\output\reports\analysis_report.md
+2025-06-26 11:16:34,716 - __main__ - INFO - Step 5: Project Evaluation / ²½Öè5£ºÏîÄ¿ÆÀ¹À
+2025-06-26 11:16:34,716 - src.evaluation - INFO - Starting project evaluation
+2025-06-26 11:16:34,716 - src.evaluation - INFO - Evaluating data cleaning quality
+2025-06-26 11:16:34,730 - src.evaluation - INFO - Evaluating data analysis quality
+2025-06-26 11:16:34,741 - src.evaluation - INFO - Evaluating visualization quality
+2025-06-26 11:16:34,742 - src.evaluation - INFO - Evaluating code quality
+2025-06-26 11:16:34,745 - src.evaluation - INFO - Evaluating report writing quality
+2025-06-26 11:16:34,755 - src.evaluation - INFO - Evaluation reports saved: c:\Users\delet\hadoop-coursework\output\reports\evaluation_report.json, c:\Users\delet\hadoop-coursework\output\reports\evaluation_report.md
+2025-06-26 11:16:34,755 - src.evaluation - INFO - Project evaluation completed. Overall score: 85.72/100
+2025-06-26 11:16:34,756 - __main__ - INFO - Analysis completed successfully! / ·ÖÎö³É¹¦Íê³É£¡
+2025-06-26 11:16:34,756 - __main__ - INFO - Project evaluation score: 85.72/100
+2025-06-26 11:16:34,756 - __main__ - INFO - ÏîÄ¿ÆÀ¹ÀµÃ·Ö: 85.72/100
