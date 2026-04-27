@@ -461,32 +461,78 @@ def create_anomaly_charts(df, anomalies, large_order_threshold):
     
     # 1. 带异常点标记的散点图（订单金额 vs 订单数量）
     df_scatter = df.copy()
-    df_scatter['is_anomaly'] = df_scatter['order_id'].isin(all_anomalies['order_id'])
     
     # 合并异常原因
-    df_scatter = df_scatter.merge(
-        all_anomalies[['order_id', 'anomaly_reason']], 
-        on='order_id', 
-        how='left'
-    )
-    df_scatter['anomaly_reason'] = df_scatter['anomaly_reason'].fillna('正常订单')
+    if not all_anomalies.empty and 'order_id' in all_anomalies.columns:
+        df_scatter = df_scatter.merge(
+            all_anomalies[['order_id', 'anomaly_reason']], 
+            on='order_id', 
+            how='left'
+        )
+        df_scatter['anomaly_reason'] = df_scatter['anomaly_reason'].fillna('正常订单')
+    else:
+        df_scatter['anomaly_reason'] = '正常订单'
     
-    fig_scatter = px.scatter(
-        df_scatter,
-        x='quantity',
-        y='total_amount',
-        color='anomaly_reason',
+    # 对数据进行抽样，避免点太多导致渲染问题
+    max_points = 2000
+    if len(df_scatter) > max_points:
+        # 确保异常订单都被保留
+        anomaly_mask = df_scatter['anomaly_reason'] != '正常订单'
+        anomaly_df = df_scatter[anomaly_mask]
+        normal_df = df_scatter[~anomaly_mask]
+        
+        # 对正常订单进行抽样
+        sample_size = max_points - len(anomaly_df)
+        if sample_size > 0 and len(normal_df) > sample_size:
+            normal_df_sampled = normal_df.sample(n=sample_size, random_state=42)
+        else:
+            normal_df_sampled = normal_df
+        
+        df_scatter_sampled = pd.concat([anomaly_df, normal_df_sampled], ignore_index=True)
+    else:
+        df_scatter_sampled = df_scatter.copy()
+    
+    # 使用 go.Scatter 而不是 px.scatter，更精确控制
+    fig_scatter = go.Figure()
+    
+    # 定义颜色映射
+    color_map = {
+        '正常订单': '#81C784',
+        '大额订单': '#FF5722',
+        '高频下单': '#FF9800',
+        '异常折扣': '#E91E63'
+    }
+    
+    # 按类型分组绘制
+    for reason in df_scatter_sampled['anomaly_reason'].unique():
+        filtered = df_scatter_sampled[df_scatter_sampled['anomaly_reason'] == reason]
+        fig_scatter.add_trace(
+            go.Scatter(
+                x=filtered['quantity'],
+                y=filtered['total_amount'],
+                mode='markers',
+                name=reason,
+                marker=dict(
+                    color=color_map.get(reason, '#9E9E9E'),
+                    size=8,
+                    opacity=0.7,
+                    line=dict(width=1, color='white')
+                ),
+                hovertemplate='<b>订单类型:</b> %{text}<br>' +
+                             '<b>购买数量:</b> %{x}<br>' +
+                             '<b>订单金额:</b> ¥%{y:,.2f}<extra></extra>',
+                text=filtered['anomaly_reason']
+            )
+        )
+    
+    fig_scatter.update_layout(
         title='订单异常检测散点图',
-        labels={'quantity': '购买数量', 'total_amount': '订单金额 (¥)', 'anomaly_reason': '订单类型'},
-        color_discrete_map={
-            '正常订单': '#81C784',
-            '大额订单': '#FF5722',
-            '高频下单': '#FF9800',
-            '异常折扣': '#E91E63'
-        },
-        opacity=0.6
+        xaxis_title='购买数量',
+        yaxis_title='订单金额 (¥)',
+        height=550,
+        legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1),
+        hovermode='closest'
     )
-    fig_scatter.update_layout(height=550)
     
     # 2. 交易波动预警图表
     fig_volatility = make_subplots(
@@ -799,17 +845,53 @@ def create_retention_charts(retention_analysis):
     )
     
     # 5. RFM分布散点图
-    fig_rfm_scatter = px.scatter(
-        rfm_data,
-        x='recency',
-        y='monetary',
-        color='lifecycle_stage',
+    # 对数据进行抽样，避免点太多导致渲染问题
+    max_points = 2000
+    if len(rfm_data) > max_points:
+        # 按生命周期阶段分层抽样
+        sampled_dfs = []
+        for stage in rfm_data['lifecycle_stage'].unique():
+            stage_df = rfm_data[rfm_data['lifecycle_stage'] == stage]
+            # 每个阶段至少保留几个点
+            sample_size = min(len(stage_df), max(5, int(max_points / rfm_data['lifecycle_stage'].nunique())))
+            sampled_dfs.append(stage_df.sample(n=sample_size, random_state=42))
+        rfm_data_sampled = pd.concat(sampled_dfs, ignore_index=True)
+    else:
+        rfm_data_sampled = rfm_data.copy()
+    
+    # 使用 go.Scatter 而不是 px.scatter，更精确控制
+    fig_rfm_scatter = go.Figure()
+    
+    # 按生命周期阶段分组绘制
+    for stage in rfm_data_sampled['lifecycle_stage'].unique():
+        filtered = rfm_data_sampled[rfm_data_sampled['lifecycle_stage'] == stage]
+        fig_rfm_scatter.add_trace(
+            go.Scatter(
+                x=filtered['recency'],
+                y=filtered['monetary'],
+                mode='markers',
+                name=stage,
+                marker=dict(
+                    color=lifecycle_colors.get(stage, '#9E9E9E'),
+                    size=10,
+                    opacity=0.7,
+                    line=dict(width=1, color='white')
+                ),
+                hovertemplate='<b>生命周期阶段:</b> %{text}<br>' +
+                             '<b>最近购买天数:</b> %{x} 天<br>' +
+                             '<b>消费总金额:</b> ¥%{y:,.2f}<extra></extra>',
+                text=filtered['lifecycle_stage']
+            )
+        )
+    
+    fig_rfm_scatter.update_layout(
         title='用户RFM分布与生命周期阶段',
-        labels={'recency': '最近购买天数', 'monetary': '消费总金额', 'frequency': '购买频率'},
-        color_discrete_map=lifecycle_colors,
-        opacity=0.6
+        xaxis_title='最近购买天数 (天)',
+        yaxis_title='消费总金额 (¥)',
+        height=500,
+        legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1),
+        hovermode='closest'
     )
-    fig_rfm_scatter.update_layout(height=500)
     
     return {
         'fig_repurchase': fig_repurchase,
