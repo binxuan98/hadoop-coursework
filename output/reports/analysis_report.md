@@ -2,7 +2,7 @@
 # E-commerce Order Analysis Report
 # 电商订单分析报告
 
-**Generated on:** 2025-05-28T00:24:49.059231
+**Generated on:** 2026-04-27T22:17:45.456581
 
 **Analysis Period:** 2023-01-01T00:00:00 to 2023-12-31T00:00:00
 

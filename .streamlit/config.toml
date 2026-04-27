@@ -14,3 +14,12 @@ headless = true
 
 # Browser configuration
 gatherUsageStats = false
+
+[theme]
+
+# Green theme configuration
+primaryColor = "#2E8B57"
+backgroundColor = "#F0FFF0"
+secondaryBackgroundColor = "#E8F5E9"
+textColor = "#1B5E20"
+font = "sans serif"
