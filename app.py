@@ -476,7 +476,6 @@ def create_anomaly_charts(df, anomalies, large_order_threshold):
         x='quantity',
         y='total_amount',
         color='anomaly_reason',
-        size='total_amount',
         title='订单异常检测散点图',
         labels={'quantity': '购买数量', 'total_amount': '订单金额 (¥)', 'anomaly_reason': '订单类型'},
         color_discrete_map={
@@ -484,7 +483,8 @@ def create_anomaly_charts(df, anomalies, large_order_threshold):
             '大额订单': '#FF5722',
             '高频下单': '#FF9800',
             '异常折扣': '#E91E63'
-        }
+        },
+        opacity=0.6
     )
     fig_scatter.update_layout(height=550)
     
@@ -804,10 +804,10 @@ def create_retention_charts(retention_analysis):
         x='recency',
         y='monetary',
         color='lifecycle_stage',
-        size='frequency',
         title='用户RFM分布与生命周期阶段',
         labels={'recency': '最近购买天数', 'monetary': '消费总金额', 'frequency': '购买频率'},
-        color_discrete_map=lifecycle_colors
+        color_discrete_map=lifecycle_colors,
+        opacity=0.6
     )
     fig_rfm_scatter.update_layout(height=500)
     
@@ -1335,8 +1335,8 @@ def main():
                     product_analysis = analyzer.product_analysis()
                     
                     analysis_results = {
-                        'basic_statistics': basic_stats,
-                        'time_series_analysis': time_analysis,
+                        'basic_stats': basic_stats,
+                        'time_analysis': time_analysis,
                         'customer_analysis': customer_analysis,
                         'product_analysis': product_analysis
                     }
